@@ -1,7 +1,8 @@
+import BandPage from "./components/Pages/BandPage";
+import FavouritesPage from "./components/Pages/FavouritesPage";
+import LandingPage from "./components/Pages/LandingPage";
+import ProgramPage from "./components/Pages/ProgramPage";
 import "./index.scss";
-import PlayingNow from "./components/PlayingNow";
-import Schedule from "./components/Schedule";
-import TodaysHeadliners from "./components/TodaysHeadliners";
 
 function App() {
   return (
@@ -29,24 +30,11 @@ function App() {
           </li>
         </ul>
       </nav>
-      <section>
-        <h1> FooFest 2023</h1>
-        <h2>17-23 July</h2>
-        <p>The best damn festival ever</p>
-      </section>
-      <PlayingNow />
-      <Schedule />
-      <TodaysHeadliners />
-      <section className="news-section">
-        <div>
-          <h2>News & Updates</h2>
-          <p>Text here</p>
-        </div>
-        <div>
-          <h2>Party safely</h2>
-          <p>Text here</p>
-        </div>
-      </section>
+
+      <LandingPage />
+      <ProgramPage />
+      <FavouritesPage />
+      <BandPage />
     </div>
   );
 }
