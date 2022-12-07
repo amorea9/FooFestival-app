@@ -5,8 +5,8 @@ import TodaysHeadliners from "./components/TodaysHeadliners";
 
 function App() {
   return (
-    <div>
-      <nav>
+    <div className="layout-wrapper">
+      <nav className="top-nav">
         <ul>
           <li>logo here</li>
           <li>FOOFEST</li>
@@ -29,7 +29,7 @@ function App() {
           </li>
         </ul>
       </nav>
-      <section>
+      <section className="hero-section">
         <h1> FooFest 2023</h1>
         <h2>17-23 July</h2>
         <p>The best damn festival ever</p>
