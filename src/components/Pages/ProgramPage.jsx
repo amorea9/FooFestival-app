@@ -8,7 +8,7 @@ function Program() {
     <div>
       <h1>Program 2023</h1>
       <label htmlFor="filters-nav">Filter by: </label>
-      <div id="filters-nav">
+      <div id="filtersNav">
         <DayFiltering />
         <StageFiltering />
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" className=" search-icon bi bi-search" viewBox="0 0 16 16">
