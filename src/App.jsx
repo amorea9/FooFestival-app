@@ -1,6 +1,7 @@
 import BandPage from "./components/Pages/BandPage";
 import FavouritesPage from "./components/Pages/FavouritesPage";
 import LandingPage from "./components/Pages/LandingPage";
+import LoginPage from "./components/Pages/LoginPage";
 import ProgramPage from "./components/Pages/ProgramPage";
 import "./index.scss";
 
@@ -30,7 +31,7 @@ function App() {
           </li>
         </ul>
       </nav>
-
+      <LoginPage />
       <LandingPage />
       <ProgramPage />
       <FavouritesPage />
