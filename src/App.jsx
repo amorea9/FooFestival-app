@@ -6,8 +6,8 @@ import "./index.scss";
 
 function App() {
   return (
-    <div>
-      <nav>
+    <div className="layout-wrapper">
+      <nav className="top-nav">
         <ul>
           <li>logo here</li>
           <li>FOOFEST</li>
