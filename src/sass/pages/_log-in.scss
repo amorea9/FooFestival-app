@@ -29,11 +29,15 @@
   border: none;
   background-color: transparent;
   border-bottom: 1px solid $orange;
-  height: 30px;
+  height: 35px;
   color: $white;
 }
 //maybe this is not aligned at center?
 .log-in-page {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  height: 100vh;
   h1 {
     text-align: center;
   }

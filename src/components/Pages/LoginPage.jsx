@@ -1,4 +1,4 @@
-function LoginPage() {
+function LoginPage(props) {
   function submit(e) {
     e.preventDefault();
   }
@@ -17,7 +17,7 @@ function LoginPage() {
             <input id="ticketNumber" type="text" placeholder="AID74RBSM8Y" />
           </div>
 
-          <input className="log-in-button" type="submit" value="Log in &#10132; " />
+          <input className="log-in-button" type="submit" value="Log in &#10132; " onClick={props.getLandingPage} />
         </form>
       </div>
     </section>
