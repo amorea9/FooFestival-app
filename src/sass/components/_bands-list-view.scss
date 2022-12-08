@@ -30,13 +30,10 @@
   gap: 0.5rem;
 }
 .band-card {
-  background-color: rgb(70, 70, 70);
+  background-color: $dark-grey;
   padding: 1rem;
   border-radius: 20px;
   min-width: 20rem;
-  h3 {
-    margin: 0;
-  }
 }
 .bands-list {
   h2 {
