@@ -8,19 +8,19 @@
   font-family: "Inter", sans-serif;
 }
 
-:root {
-  // fonts
-  --h1-font: "Kanit", sans-serif;
-  // colours
-  --black: #101014;
-  --white: #fbfafa;
-  --grey: #8b8b8b;
-  --orange: #ff802c;
-  --purple: #6671e3;
-}
+//sass variables
+// fonts
+$h1-font: "Kanit", sans-serif;
+// colours
+$black: #101014;
+$white: #fbfafa;
+$grey: #8b8b8b;
+$orange: #ff802c;
+$purple: #6671e3;
+
 html {
-  background-color: var(--black);
-  color: var(--white);
+  background-color: $black;
+  color: $white;
   font-size: 1em;
 }
 a {
@@ -37,7 +37,7 @@ h4 {
 }
 
 h1 {
-  font-family: var(--h1-font);
+  font-family: $h1-font;
   font-weight: bold;
   font-size: 2.5rem;
   line-height: 70%;
@@ -49,12 +49,12 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-  color: var(--orange);
+  color: $orange;
 }
 
 h4 {
   font-size: 1rem;
-  color: var(--grey);
+  color: $grey;
   font-weight: 400;
 }
 
@@ -92,19 +92,19 @@ ul {
   }
 }
 .hero-section {
-  border: 1px solid #fbfafa;
+  border: 1px solid $white;
   padding: 1rem;
 }
 .playing-now-comp {
-  border: 1px solid #fbfafa;
+  border: 1px solid $white;
   padding: 1rem;
 }
 .schedule-comp {
-  border: 1px solid #fbfafa;
+  border: 1px solid $white;
   padding: 1rem;
 }
 .todays-headliners-comp {
-  border: 1px solid #fbfafa;
+  border: 1px solid $white;
   padding: 1rem;
 }
 .news-section {
@@ -112,7 +112,7 @@ ul {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   div {
-    border: 1px solid #fbfafa;
+    border: 1px solid $white;
     padding: 1rem;
   }
 }
@@ -162,7 +162,7 @@ ul {
 .bands-list {
   h1 {
     padding-bottom: 0.4rem;
-    border-bottom: 2px solid rgb(230, 73, 73);
+    border-bottom: 2px solid $orange;
   }
 }
 #singleBandPage {
@@ -194,7 +194,7 @@ ul {
   }
   h4 {
     padding-bottom: 0.4rem;
-    border-bottom: 2px solid rgb(230, 73, 73);
+    border-bottom: 2px solid $orange;
   }
 }
 .members-section {
@@ -213,7 +213,7 @@ ul {
   gap: 1.3rem;
   height: 20rem;
   padding: 0;
-  border: 1px solid white;
+  border: 1px solid $white;
   border-radius: 16px;
   margin: 0 1rem;
 }
@@ -225,7 +225,7 @@ ul {
 .log-in-button {
   padding: 0.8rem 4.2rem;
   border-radius: 12px;
-  border: 1px solid white;
+  border: 1px solid $white;
   cursor: pointer;
 }
 #email,
@@ -233,7 +233,7 @@ ul {
   outline: none;
   border: none;
   background-color: transparent;
-  border-bottom: 1px solid rgb(203, 74, 74);
+  border-bottom: 1px solid $orange;
   height: 30px;
 }
 //maybe this is not aligned at center?
