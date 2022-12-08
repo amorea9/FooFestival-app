@@ -1,0 +1,36 @@
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+  height: 20rem;
+  padding: 0;
+  border: 1px solid $white;
+  border-radius: 16px;
+  margin: 0 1rem;
+}
+.email-input,
+.ticket-number-input {
+  display: flex;
+  flex-direction: column;
+}
+.log-in-button {
+  padding: 0.8rem 4.2rem;
+  border-radius: 12px;
+  border: 1px solid $white;
+  cursor: pointer;
+}
+#email,
+#ticketNumber {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid $orange;
+  height: 30px;
+}
+//maybe this is not aligned at center?
+.log-in-page {
+  h1 {
+    text-align: center;
+  }
+}

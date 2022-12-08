@@ -1,0 +1,19 @@
+// global variables
+@import "utils/global-style-variables";
+// fonts
+@import "utils/fonts";
+// log in page style
+@import "pages/log-in";
+// base style (originally from vite)
+@import "base/basic-style";
+// general layout styling
+@import "base/general-layout-styling";
+
+// bands list view
+@import "components/bands-list-view";
+//top navigation
+@import "components/top-nav";
+//bottom navigation
+@import "components/bottom-nav";
+//single band page
+@import "pages/band-page";

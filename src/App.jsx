@@ -4,7 +4,7 @@ import LandingPage from "./components/Pages/LandingPage";
 import LoginPage from "./components/Pages/LoginPage";
 import ProgramPage from "./components/Pages/ProgramPage";
 import BottomNav from "./components/Reusable components/BottomNav";
-import "./index.scss";
+import "./sass/style.scss";
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
           <li>en/dk</li>
         </ul>
       </nav>
+      <LoginPage />
       <LandingPage />
       <ProgramPage />
       <FavouritesPage />
