@@ -32,5 +32,8 @@ ul {
     @include white-border;
     padding: 1rem 0.5rem;
     width: 50%;
+    h2 {
+      font-size: 1.7rem;
+    }
   }
 }

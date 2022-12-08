@@ -14,7 +14,7 @@ function Program() {
         <StageFiltering />
       </div>
       <div className="search-nav">
-        <input id="searchField" type="text" />
+        <input id="searchField" type="text" placeholder="search here" />
         <img className="search-icon" src={searchIcon} alt="search icon" />
       </div>
 

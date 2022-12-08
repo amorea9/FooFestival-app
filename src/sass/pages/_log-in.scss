@@ -3,8 +3,6 @@
   flex-direction: column;
   align-items: center;
   gap: 1.3rem;
-  top: 50%;
-  right: 50%;
 }
 .form-wrapper {
   position: relative;
@@ -32,6 +30,7 @@
   background-color: transparent;
   border-bottom: 1px solid $orange;
   height: 30px;
+  color: $white;
 }
 //maybe this is not aligned at center?
 .log-in-page {
