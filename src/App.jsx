@@ -3,6 +3,7 @@ import FavouritesPage from "./components/Pages/FavouritesPage";
 import LandingPage from "./components/Pages/LandingPage";
 import LoginPage from "./components/Pages/LoginPage";
 import ProgramPage from "./components/Pages/ProgramPage";
+import BottomNav from "./components/Reusable components/BottomNav";
 import "./index.scss";
 
 function App() {
@@ -15,27 +16,11 @@ function App() {
           <li>en/dk</li>
         </ul>
       </nav>
-      <nav className="bottom-menu">
-        <ul>
-          <li>
-            <a href="">Home</a>
-          </li>
-          <li>
-            <a href="">Favourites</a>
-          </li>
-          <li>
-            <a href="">Schedule</a>
-          </li>
-          <li>
-            <a href="">Live now</a>
-          </li>
-        </ul>
-      </nav>
-      <LoginPage />
       <LandingPage />
       <ProgramPage />
       <FavouritesPage />
       <BandPage />
+      <BottomNav />
     </div>
   );
 }
