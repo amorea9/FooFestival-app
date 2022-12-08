@@ -1,0 +1,37 @@
+#filtersNav,
+.search-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+#days,
+#stages {
+  padding: 0.5rem 1rem;
+  font-size: $font-size;
+  border-radius: 20px;
+  border: none;
+  background-color: $dark-grey;
+  color: $white;
+  font-family: $font-Inter;
+  width: 100%;
+}
+#searchField {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  height: 30px;
+  color: $white;
+  background-color: $dark-grey;
+  border-radius: 20px;
+  padding-left: 1rem;
+  width: 100%;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10%;
+}

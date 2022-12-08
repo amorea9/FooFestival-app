@@ -2,7 +2,7 @@ import React from "react";
 
 function PlayingNow() {
   return (
-    <section className="playing-now-comp">
+    <article className="playing-now-comp">
       <h2>
         Playing now <span> .</span>
       </h2>
@@ -20,7 +20,7 @@ function PlayingNow() {
           <p>Stage here</p>
         </article>
       </div>
-    </section>
+    </article>
   );
 }
 

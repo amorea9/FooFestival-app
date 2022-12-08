@@ -14,7 +14,7 @@ function Landing() {
       <PlayingNow />
       <Schedule />
       <TodaysHeadliners />
-      <section className="news-section">
+      <article className="news-section">
         <div>
           <h2>News & Updates</h2>
           <p>Text here</p>
@@ -23,7 +23,7 @@ function Landing() {
           <h2>Party safely</h2>
           <p>Text here</p>
         </div>
-      </section>
+      </article>
     </section>
   );
 }

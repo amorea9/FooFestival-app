@@ -3,7 +3,7 @@ import BandCard from "../Reusable components/BandCard";
 
 function BandPage() {
   return (
-    <div id="singleBandPage">
+    <section id="singleBandPage">
       <h1>Metallica</h1>
       <div className="single-band-content">
         <img src="http://placekitten.com/400/300" alt="band image" />
@@ -28,7 +28,7 @@ function BandPage() {
           <BandCard />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
