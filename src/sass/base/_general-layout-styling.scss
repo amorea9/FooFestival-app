@@ -5,15 +5,15 @@ ul {
 }
 
 .layout-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 1rem;
   section {
     border-radius: 16px;
+
     div {
       border-radius: 16px;
     }
+  }
+  > section {
+    margin: 1rem;
   }
 }
 @mixin white-border {
@@ -28,12 +28,14 @@ ul {
 }
 
 .news-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  align-items: center;
+  width: 100%;
   gap: 1rem;
   div {
     border: 1px solid $white;
-    padding: 1rem;
+    padding: 1rem 0.5rem;
+    width: 50%;
   }
 }
 .landing-page,

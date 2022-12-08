@@ -33,7 +33,7 @@
   background-color: $dark-grey;
   padding: 1rem;
   border-radius: 20px;
-  min-width: 20rem;
+  width: 100%;
 }
 .bands-list {
   h2 {
@@ -41,4 +41,5 @@
     border-bottom: 2px solid $orange;
   }
   padding-bottom: 1rem;
+  width: 100%;
 }
