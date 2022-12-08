@@ -242,4 +242,11 @@ ul {
     text-align: center;
   }
 }
+
+.landing-page,
+.program-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 /****GENERAL LAYOUT STYLING ENDS ******/

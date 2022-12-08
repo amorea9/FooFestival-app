@@ -5,7 +5,7 @@ import StageFiltering from "../Reusable components/StageFiltering";
 
 function Program() {
   return (
-    <div>
+    <section className="program-page">
       <h1>Program 2023</h1>
       <label htmlFor="filters-nav">Filter by: </label>
       <div id="filtersNav">
@@ -21,7 +21,7 @@ function Program() {
         <BandsList />
         <BandsList />
       </div>
-    </div>
+    </section>
   );
 }
 
