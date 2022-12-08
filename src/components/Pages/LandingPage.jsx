@@ -5,7 +5,7 @@ import TodaysHeadliners from "../Reusable components/TodaysHeadliners";
 
 function Landing() {
   return (
-    <section>
+    <section className="landing-page">
       <section>
         <h1> FooFest 2023</h1>
         <h2>17-23 July</h2>

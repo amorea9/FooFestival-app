@@ -1,6 +1,7 @@
 import BandPage from "./components/Pages/BandPage";
 import FavouritesPage from "./components/Pages/FavouritesPage";
 import LandingPage from "./components/Pages/LandingPage";
+import LoginPage from "./components/Pages/LoginPage";
 import ProgramPage from "./components/Pages/ProgramPage";
 import BottomNav from "./components/Reusable components/BottomNav";
 import "./index.scss";

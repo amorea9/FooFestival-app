@@ -1,10 +1,12 @@
 import BandCard from "./BandCard";
 function BandsList() {
   return (
-    <div>
-      <h1>Monday, July 17th</h1>
-      <BandCard />
-      <BandCard />
+    <div className="bands-list">
+      <h2>Monday, July 17th</h2>
+      <div className="bands-list-wrapper">
+        <BandCard />
+        <BandCard />
+      </div>
     </div>
   );
 }

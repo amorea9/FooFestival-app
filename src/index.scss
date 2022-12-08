@@ -1,32 +1,61 @@
-:root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Kanit:wght@700&display=swap");
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
 }
 
+//sass variables
+// fonts
+$h1-font: "Kanit", sans-serif;
+// colours
+$black: #101014;
+$white: #fbfafa;
+$grey: #8b8b8b;
+$orange: #ff802c;
+$purple: #6671e3;
+
+html {
+  background-color: $black;
+  color: $white;
+  font-size: 1em;
+}
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: inherit;
+  text-decoration: none;
 }
-a:hover {
-  color: #535bf2;
+
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: $h1-font;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 70%;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: $orange;
+}
+
+h4 {
+  font-size: 1rem;
+  color: $grey;
+  font-weight: 400;
 }
 
 button {
@@ -43,27 +72,11 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
 
 /****GENERAL LAYOUT STYLING BEGINS ******/
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 .layout-wrapper {
@@ -79,19 +92,19 @@ ul {
   }
 }
 .hero-section {
-  border: 1px solid #fbfafa;
+  border: 1px solid $white;
   padding: 1rem;
 }
 .playing-now-comp {
-  border: 1px solid #fbfafa;
+  border: 1px solid $white;
   padding: 1rem;
 }
 .schedule-comp {
-  border: 1px solid #fbfafa;
+  border: 1px solid $white;
   padding: 1rem;
 }
 .todays-headliners-comp {
-  border: 1px solid #fbfafa;
+  border: 1px solid $white;
   padding: 1rem;
 }
 .news-section {
@@ -99,10 +112,145 @@ ul {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   div {
-    border: 1px solid #fbfafa;
+    border: 1px solid $white;
     padding: 1rem;
   }
 }
+
+#filtersNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  margin-top: 1rem;
+}
+//to use on the search bar input field
+.hidden {
+  display: none;
+}
+.bands-list-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.band-card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  p {
+    margin: 0;
+  }
+}
+.band-card-side-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+.band-card {
+  background-color: rgb(70, 70, 70);
+  padding: 1rem;
+  border-radius: 20px;
+  h3 {
+    margin: 0;
+  }
+}
+.bands-list {
+  h1 {
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid $orange;
+  }
+}
+#singleBandPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h1 {
+    text-align: center;
+  }
+}
+.single-band-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  max-width: 400px;
+  img {
+    object-fit: cover;
+    max-width: 100%;
+  }
+}
+.live-next {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  h3 {
+    margin-bottom: 0;
+  }
+  h4 {
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid $orange;
+  }
+}
+.members-section {
+  margin-top: 1rem;
+  p {
+    margin: 0;
+  }
+}
+.single-band-content > p {
+  margin: 2rem 0;
+}
+.log-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.3rem;
+  height: 20rem;
+  padding: 0;
+  border: 1px solid $white;
+  border-radius: 16px;
+  margin: 0 1rem;
+}
+.email-input,
+.ticket-number-input {
+  display: flex;
+  flex-direction: column;
+}
+.log-in-button {
+  padding: 0.8rem 4.2rem;
+  border-radius: 12px;
+  border: 1px solid $white;
+  cursor: pointer;
+}
+#email,
+#ticketNumber {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid $orange;
+  height: 30px;
+}
+//maybe this is not aligned at center?
+.log-in-page {
+  h1 {
+    text-align: center;
+  }
+}
+
+.landing-page,
+.program-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 /****GENERAL LAYOUT STYLING ENDS ******/
 
 /* ****BOTTOM NAV STYLING STARTS***** */
