@@ -1,6 +1,9 @@
 import React from "react";
 
 function PlayingNow() {
+  //TODO 2: fetch 3 bands where locale time is > than start: "time" and < end "time"
+
+  //TODO 3: Update UI with these 3 bands
   return (
     <section className="playing-now-comp">
       <h2>
