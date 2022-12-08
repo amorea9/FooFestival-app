@@ -1,5 +1,7 @@
 import React from "react";
-
+import fullHeart from "../../media/favourites-full.svg";
+import scheduleIcon from "../../media/schedule-icon.svg";
+import liveNow from "../../media/livenow-icon.svg";
 function BottomNav() {
   return (
     <nav className="bottom-nav">
@@ -8,15 +10,15 @@ function BottomNav() {
           <a href="">Home</a>
         </li>
         <li>
-          <img src="src/media/favourites.svg" alt="favourites icon" />
+          <img src={fullHeart} alt="favourites icon" />
           <a href="">Favourites</a>
         </li>
         <li>
-          <img src="src/media/schedule-icon.svg" alt="schedule icon" />
+          <img src={scheduleIcon} alt="schedule icon" />
           <a href="">Schedule</a>
         </li>
         <li>
-          <img src="src/media/livenow-icon.svg" alt="live now icon" />
+          <img src={liveNow} alt="live now icon" />
           <a href="">Live</a>
         </li>
       </ul>

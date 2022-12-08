@@ -16,11 +16,11 @@ function App() {
           <li>en/dk</li>
         </ul>
       </nav>
-      <LoginPage />
-      <LandingPage />
+      {/* <LoginPage />
+      <LandingPage /> */}
       <ProgramPage />
-      <FavouritesPage />
-      <BandPage />
+      {/* <FavouritesPage />
+      <BandPage /> */}
       <BottomNav />
     </div>
   );

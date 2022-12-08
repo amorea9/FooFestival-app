@@ -16,7 +16,7 @@ function LoginPage() {
           <input id="ticketNumber" type="text" placeholder="AID74RBSM8Y" />
         </div>
 
-        <input className="log-in-button" type="submit" value="Log in &#8594;" />
+        <input className="log-in-button" type="submit" value="Log in &#10132; " />
       </form>
     </section>
   );
