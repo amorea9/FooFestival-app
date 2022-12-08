@@ -1,14 +1,12 @@
-#filtersNav {
+#filtersNav,
+.search-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: 1rem;
 }
-//to use on the search bar input field
-.hidden {
-  display: none;
-}
+
 #days,
 #stages {
   padding: 0.5rem 1rem;
@@ -18,6 +16,7 @@
   background-color: $dark-grey;
   color: $white;
   font-family: $font-Inter;
+  width: 100%;
 }
 #searchField {
   outline: none;
@@ -28,4 +27,11 @@
   background-color: $dark-grey;
   border-radius: 20px;
   padding-left: 1rem;
+  width: 100%;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10%;
 }

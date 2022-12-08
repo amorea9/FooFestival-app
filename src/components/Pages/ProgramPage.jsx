@@ -12,10 +12,12 @@ function Program() {
       <div id="filtersNav">
         <DayFiltering />
         <StageFiltering />
-        <img src={searchIcon} alt="search icon" />
+      </div>
+      <div className="search-nav">
+        <input id="searchField" type="text" />
+        <img className="search-icon" src={searchIcon} alt="search icon" />
       </div>
 
-      <input id="searchField" className="hidden" type="text" />
       <div className="bands-list-wrapper">
         <BandsList />
         <BandsList />
