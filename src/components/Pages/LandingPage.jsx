@@ -21,7 +21,7 @@ function Landing(props) {
         </div>
         <div>
           <h2>Party safely</h2>
-          <p>Here you can find out where medical aid points are located, drug safety regulations, where to report of harrasment and more.</p>
+          <p>Here you can find out where medical aid points are located, drug safety regulations and more.</p>
         </div>
       </article>
     </section>
