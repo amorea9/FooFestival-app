@@ -1,10 +1,42 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
+import App from "./routes/App";
 import "./sass/style.scss";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./components/Pages/ErrorPage";
+import Landing from "./components/Pages/LandingPage";
+import LoginPage from "./components/Pages/LoginPage";
+import ProgramPage from "./components/Pages/ProgramPage";
+import FavouritesPage from "./components/Pages/FavouritesPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/log-in",
+        element: <LoginPage />,
+      },
+      {
+        path: "/landing-page",
+        element: <Landing />,
+      },
+      {
+        path: "/program-page",
+        element: <ProgramPage />,
+      },
+      {
+        path: "/favourites-page",
+        element: <FavouritesPage />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );

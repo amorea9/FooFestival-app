@@ -3,7 +3,7 @@ import PlayingNow from "../Reusable components/PlayingNow";
 import Schedule from "../Reusable components/Schedule";
 import TodaysHeadliners from "../Reusable components/TodaysHeadliners";
 
-function Landing() {
+function Landing(props) {
   return (
     <section className="landing-page">
       <section>
@@ -12,7 +12,7 @@ function Landing() {
         <p>The best damn festival ever</p>
       </section>
       <PlayingNow />
-      <Schedule />
+      <Schedule getProgramPage={props.getProgramPage} />
       <TodaysHeadliners />
       <article className="news-section">
         <div>

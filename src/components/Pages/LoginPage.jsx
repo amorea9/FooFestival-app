@@ -1,4 +1,7 @@
-function LoginPage() {
+import { useNavigate } from "react-router-dom";
+
+function LoginPage(props) {
+  const navigate = useNavigate();
   function submit(e) {
     e.preventDefault();
   }
@@ -17,7 +20,15 @@ function LoginPage() {
             <input id="ticketNumber" type="text" placeholder="AID74RBSM8Y" />
           </div>
 
-          <input className="log-in-button" type="submit" value="Log in &#10132; " />
+          <input
+            className="log-in-button"
+            type="submit"
+            value="Log in &#10132;"
+            onClick={() => {
+              props.setLogin(true);
+              navigate("/landing-page#top");
+            }}
+          />
         </form>
       </div>
     </section>

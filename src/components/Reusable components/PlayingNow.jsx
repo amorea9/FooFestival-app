@@ -2,7 +2,7 @@ import React from "react";
 
 function PlayingNow() {
   return (
-    <article className="playing-now-comp">
+    <article id="playingNow" className="playing-now-comp">
       <h2>
         Playing now <span> .</span>
       </h2>
