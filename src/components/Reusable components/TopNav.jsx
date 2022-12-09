@@ -1,16 +1,16 @@
 import React from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import logo from "../../media/foofest-logo.png";
 
 function TopNav(props) {
   const navigate = useNavigate();
   return (
     <nav className="top-nav">
-      <ul>
-        <li>logo here</li>
-        <li>FOOFEST</li>
-        <li>en/dk</li>
-      </ul>
+      <Link to={"/landing-page#top"}>
+        <img src={logo} alt="favourites icon" />{" "}
+      </Link>
+
       <Link
         onClick={() => {
           props.setLogin(false);

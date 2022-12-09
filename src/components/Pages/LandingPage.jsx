@@ -6,7 +6,7 @@ import TodaysHeadliners from "../Reusable components/TodaysHeadliners";
 function Landing(props) {
   return (
     <section className="landing-page">
-      <section>
+      <section className="hero-section">
         <h1> FooFest 2023</h1>
         <h2>17-23 July</h2>
         <p>The best damn festival ever</p>
@@ -17,11 +17,11 @@ function Landing(props) {
       <article className="news-section">
         <div>
           <h2>News & Updates</h2>
-          <p>Text here</p>
+          <p>Check out the latest news. Don't miss any updates!</p>
         </div>
         <div>
           <h2>Party safely</h2>
-          <p>Text here</p>
+          <p>Here you can find out where medical aid points are located, drug safety regulations and more.</p>
         </div>
       </article>
     </section>
