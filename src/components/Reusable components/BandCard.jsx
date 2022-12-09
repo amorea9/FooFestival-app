@@ -1,20 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import emptyHeart from "../../media/favourites-empty.svg";
-function BandCard() {
+function BandCard(props) {
   return (
-    <div className="band-card">
+    <Link className="band-card" to={"/band-page#top"}>
       <h3>Metallica</h3>
       <div className="band-card-content">
         <div className="band-card-main-content">
           <p>Jotunheim</p>
-          <p>Read more &#10132;</p>
+          <p>8:00 - 10:00</p>
+          {props.page === "bandPage" ? null : <p>Read more &#10132;</p>}
         </div>
         <div className="band-card-side-content">
-          <p>10:00</p>
           <img src={emptyHeart} alt="empty heart icon" />
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
