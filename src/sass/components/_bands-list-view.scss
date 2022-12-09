@@ -45,11 +45,17 @@
 }
 .landing-page,
 .program-page,
-.favourite-page {
+.favourite-page,
+#error-page {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: $bottom-nav-spacer;
+}
+#error-page {
+  justify-content: center;
+  align-items: center;
+  margin-top: 50%;
 }
 .landing-page {
   margin-bottom: 12vh;

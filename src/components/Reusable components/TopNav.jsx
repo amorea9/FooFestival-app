@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function TopNav() {
+function TopNav(props) {
+  const navigate = useNavigate();
   return (
     <nav className="top-nav">
       <ul>
@@ -9,7 +11,14 @@ function TopNav() {
         <li>FOOFEST</li>
         <li>en/dk</li>
       </ul>
-      <Link to={"/log-in"}>Log out</Link>
+      <Link
+        onClick={() => {
+          props.setLogin(false);
+          navigate("/log-in");
+        }}
+      >
+        Log out
+      </Link>
     </nav>
   );
 }

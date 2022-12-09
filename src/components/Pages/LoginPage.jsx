@@ -4,7 +4,6 @@ function LoginPage(props) {
   const navigate = useNavigate();
   function submit(e) {
     e.preventDefault();
-    navigate("/landing-page#top");
   }
   return (
     <section className="log-in-page">
@@ -21,7 +20,15 @@ function LoginPage(props) {
             <input id="ticketNumber" type="text" placeholder="AID74RBSM8Y" />
           </div>
 
-          <input className="log-in-button" type="submit" value="Log in &#10132;" onClick={submit} />
+          <input
+            className="log-in-button"
+            type="submit"
+            value="Log in &#10132;"
+            onClick={() => {
+              props.setLogin(true);
+              navigate("/landing-page#top");
+            }}
+          />
         </form>
       </div>
     </section>

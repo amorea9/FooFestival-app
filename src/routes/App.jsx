@@ -1,23 +1,22 @@
 import React from "react";
-import BandPage from "../components/Pages/BandPage";
-import FavouritesPage from "../components/Pages/FavouritesPage";
-import LandingPage from "../components/Pages/LandingPage";
 import LoginPage from "../components/Pages/LoginPage";
-import ProgramPage from "../components/Pages/ProgramPage";
+import { useState } from "react";
 import BottomNav from "../components/Reusable components/BottomNav";
 import "../sass/style.scss";
-import { useState } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import TopNav from "../components/Reusable components/TopNav";
 
 function App() {
-  //TODO: add styling to band page
+  const [login, setLogin] = useState(false);
 
+  //TODO: add styling to band page
+  // if state is "logged out" display login component
   return (
     <div className="layout-wrapper">
-      <TopNav />
-      <Outlet />
-      <LoginPage />
+      <TopNav setLogin={setLogin} login={login} />
+
+      {login === false ? <LoginPage setLogin={setLogin} login={login} /> : <Outlet />}
+
       <BottomNav />
     </div>
   );
