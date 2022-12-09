@@ -12,25 +12,25 @@ function BottomNav(props) {
         <li>
           <Link to={"/landing-page#top"}>
             <img src={homeIcon} alt="favourites icon" />
-            Home
+            <p>Home</p>
           </Link>
         </li>
         <li>
           <Link to={"/favourites-page#top"}>
             <img src={fullHeart} alt="favourites icon" />
-            Favourites
+            <p>Favourites</p>
           </Link>
         </li>
         <li>
           <Link to={"/program-page#top"}>
             <img src={scheduleIcon} alt="schedule icon" />
-            Schedule
+            <p> Schedule</p>
           </Link>
         </li>
         <li>
           <Link smooth to={"/landing-page#top"}>
             <img src={liveNow} alt="live now icon" />
-            Live
+            <p> Live</p>
           </Link>
         </li>
       </ul>
