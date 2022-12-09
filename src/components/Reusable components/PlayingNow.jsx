@@ -1,6 +1,6 @@
 import React from "react";
 
-function PlayingNow() {
+function PlayingNow(props) {
   //TODO 2: fetch 3 bands where locale time is > than start: "time" and < end "time"
 
   //TODO 3: Update UI with these 3 bands
@@ -11,16 +11,16 @@ function PlayingNow() {
       </h2>
       <div className="playing-now-content">
         <article className="playing-now-band">
-          <h3>Metallica</h3>
-          <p>Stage here</p>
+          <h3>{props.liveNow.jotunheimLiveState}</h3>
+          <p>Jotunheim stage</p>
         </article>
         <article className="playing-now-band">
-          <h4>Metallica</h4>
-          <p>Stage here</p>
+          <h4>{props.liveNow.midgardLiveState}</h4>
+          <p>Midgard stage</p>
         </article>
         <article className="playing-now-band">
-          <p>Metallica</p>
-          <p>Stage here</p>
+          <p>{props.liveNow.vanaheimLiveState}</p>
+          <p>Vanaheim stage</p>
         </article>
       </div>
     </section>
