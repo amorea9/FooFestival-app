@@ -12,6 +12,7 @@ function App() {
     jotunheimLiveState: "",
     midgardLiveState: "",
     vanaheimLiveState: "",
+    liveShowsAtm: true,
   });
   const [dateNow, setdateNow] = useState({
     today: 0,
@@ -34,12 +35,14 @@ function App() {
     const now = new Date();
     //find day of the week
     const day = now.getDay();
-    console.log("day of the week:", day);
     //update state with current day of the week
     setdateNow({ ...dateNow, today: day });
 
     //find current time in hours and minutes
     const currentTime = now.getHours() + ":" + now.getMinutes();
+
+    //set live state of festival
+    let isFoofestLive = false;
 
     //find bands playing at Jotunheim
     const playingAtJotunheim = schedule.Jotunheim;
@@ -50,8 +53,29 @@ function App() {
     let midgardByDays = Object.values(playingAtMidgard);
     let vanaheimByDays = Object.values(playingAtVanaheim);
 
-    //because objvalues starts from a 0 based index we assign variable where day = objDay
-    let objDay = day - 1;
+    //because data in schedule is provided as 0-based index from monday and date.getNow() counts = based index from Sunday we have to make the two values correlate
+    let objDay = 0;
+    if (dateNow.today === 0) {
+      objDay = 6;
+    }
+    if (dateNow.today === 1) {
+      objDay = day - 1;
+    }
+    if (dateNow.today === 2) {
+      objDay = day - 1;
+    }
+    if (dateNow.today === 3) {
+      objDay = day - 1;
+    }
+    if (dateNow.today === 4) {
+      objDay = day - 1;
+    }
+    if (dateNow.today === 5) {
+      objDay = day - 1;
+    }
+    if (dateNow.today === 6) {
+      objDay = day - 1;
+    }
 
     // Find Live at Jotunheim stage
     let todayAtJotunheim = jotunheimByDays[objDay];
@@ -63,6 +87,7 @@ function App() {
       //find the act that is live now
       if (todayAtJotunheim != "break" && currentTime > jotunheimStart && currentTime < jotunheimEnd) {
         liveAtJotunheim = show.act;
+        isFoofestLive = true;
       }
     });
 
@@ -76,6 +101,7 @@ function App() {
       //find the act that is live now
       if (todayAtMidgard != "break" && currentTime > midgardStart && currentTime < midgardEnd) {
         liveAtMidgard = show.act;
+        isFoofestLive = true;
       }
     });
 
@@ -89,12 +115,14 @@ function App() {
       //find the act that is live now
       if (todayAtVanaheim != "break" && currentTime > vanaheimStart && currentTime < vanaheimdEnd) {
         liveAtVanaheim = show.act;
+        isFoofestLive = true;
       }
       setLiveNow({
         ...liveNow,
         vanaheimLiveState: liveAtVanaheim,
         midgardLiveState: liveAtMidgard,
         jotunheimLiveState: liveAtJotunheim,
+        liveShowsAtm: isFoofestLive,
       });
     });
   }
