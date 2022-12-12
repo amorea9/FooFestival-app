@@ -22,6 +22,7 @@
   border-radius: 12px;
   border: 1px solid $white;
   cursor: pointer;
+  font-size: 1.1rem;
 }
 #email,
 #ticketNumber {
@@ -36,7 +37,7 @@
 .log-in-page {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 3rem;
   height: 100vh;
   h1 {
     text-align: center;

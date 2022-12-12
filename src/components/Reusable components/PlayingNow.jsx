@@ -4,7 +4,7 @@ function PlayingNow(props) {
   return (
     <article id="playingNow" className="playing-now-comp">
       <h2>
-        Playing now <span> .</span>
+        Playing now <span> </span>
       </h2>
       <div className="playing-now-content">
         <article className="playing-now-band">

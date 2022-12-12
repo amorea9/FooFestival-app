@@ -7,10 +7,11 @@ import { Outlet } from "react-router-dom";
 import TopNav from "../components/Reusable components/TopNav";
 
 function App() {
+  //state used to determine if the user is logged in or not. it's faked
   const [login, setLogin] = useState(false);
 
   //TODO: add styling to band page
-  // if state is "logged out" display login component
+
   return (
     <div className="layout-wrapper">
       <TopNav setLogin={setLogin} login={login} />

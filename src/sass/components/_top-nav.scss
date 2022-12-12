@@ -1,0 +1,11 @@
+@mixin flex-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-nav {
+  @include flex-nav;
+  padding: 1rem;
+}

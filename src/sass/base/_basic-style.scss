@@ -11,6 +11,9 @@ html {
   font-size: 1em;
   scroll-behavior: smooth;
 }
+p {
+  font-size: 1rem;
+}
 
 a {
   color: inherit;
@@ -42,7 +45,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: $grey;
   font-weight: 400;
 }

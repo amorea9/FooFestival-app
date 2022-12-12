@@ -2,6 +2,8 @@ import React from "react";
 import BandCard from "../Reusable components/BandCard";
 
 function BandPage() {
+  //using this const to render the see more in the band card in the list view but not on the band page view
+  const page = "bandPage";
   return (
     <section id="singleBandPage">
       <h1>Metallica</h1>
@@ -25,7 +27,7 @@ function BandPage() {
             See <span>Metallica</span> live:
           </h3>
           <h4>Tuesday, July 18th</h4>
-          <BandCard />
+          <BandCard page={page} />
         </div>
       </div>
     </section>
