@@ -4,11 +4,13 @@ import emptyHeart from "../../media/favourites-empty.svg";
 function BandCard(props) {
   return (
     <Link className="band-card" to={"/band-page#top"}>
-      <h3>Metallica</h3>
+      <h3>{props.bandName}</h3>
       <div className="band-card-content">
         <div className="band-card-main-content">
-          <p>Jotunheim</p>
-          <p>8:00 - 10:00</p>
+          <p>{props.stage}</p>
+          <p>
+            {props.start} - {props.end}
+          </p>
           {props.page === "bandPage" ? null : <p>Read more &#10132;</p>}
         </div>
         <div className="band-card-side-content">

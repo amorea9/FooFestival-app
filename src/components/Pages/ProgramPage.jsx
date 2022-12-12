@@ -3,8 +3,16 @@ import BandsList from "../Reusable components/BandsList";
 import DayFiltering from "../Reusable components/DayFiltering";
 import StageFiltering from "../Reusable components/StageFiltering";
 import searchIcon from "../../media/search-icon.svg";
+import { useOutletContext } from "react-router-dom";
 
-function Program() {
+function Program(props) {
+  const {
+    schedule: [scheduledBands, setScheduledBands],
+  } = useOutletContext();
+
+  // console.log("monday", playingMonday);
+
+  // console.log("schedule", scheduledBands);
   return (
     <section className="program-page">
       <h1>Program 2023</h1>
@@ -19,8 +27,7 @@ function Program() {
       </div>
 
       <div className="bands-list-wrapper">
-        <BandsList />
-        <BandsList />
+        <BandsList scheduledBands={scheduledBands} />
       </div>
     </section>
   );

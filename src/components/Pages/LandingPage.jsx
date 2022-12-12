@@ -3,6 +3,7 @@ import PlayingNow from "../Reusable components/PlayingNow";
 import Schedule from "../Reusable components/Schedule";
 import TodaysHeadliners from "../Reusable components/TodaysHeadliners";
 import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 
 function Landing(props) {
   const [liveNow, setLiveNow] = useState({
@@ -196,7 +197,16 @@ function Landing(props) {
       });
     });
   }
+  
+  const {
+    schedule: [scheduledBands, setSheduledBands],
+    live: [liveNow, setLiveNow],
+    date: [dateNow, setdateNow],
+  } = useOutletContext();
 
+  // console.log("playing now", liveNow);
+  // console.log("bands", scheduledBands);
+  // console.log("jotu only", Object.values(scheduledBands.Jotunheim.mon));
   return (
     <section className="landing-page">
       <section className="hero-section">
@@ -205,7 +215,7 @@ function Landing(props) {
         <p>The best damn festival ever</p>
       </section>
       <PlayingNow liveNow={liveNow} />
-      <Schedule getProgramPage={props.getProgramPage} />
+      <Schedule />
       <TodaysHeadliners />
       <article className="news-section">
         <div>
