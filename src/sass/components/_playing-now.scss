@@ -1,11 +1,18 @@
 .playing-now-headline {
-  color: $orange;
+  color: $white;
+  font-weight: 700;
 }
 .playing-now-band {
   h3 {
-    color: $white;
+    color: $orange;
+    font-weight: 500;
   }
   p {
+    color: $white;
+    font-weight: 300;
+  }
+  .next-up {
     color: $grey;
+    font-weight: 400;
   }
 }

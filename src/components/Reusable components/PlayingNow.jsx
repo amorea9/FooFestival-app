@@ -16,14 +16,12 @@ function PlayingNow(props) {
   } else {
     return (
       <article id="playingNow" className="playing-now-comp">
-        <h2 className="playing-now-headline">
-          Playing now <span>.</span>
-        </h2>
+        <h2 className="playing-now-headline">Playing now</h2>
         <div className="playing-now-content">
           <article className="playing-now-band">
             <h3>{props.liveNow.jotunheimLiveState}</h3>
             <p>At stage Jotunheim</p>
-            <p>
+            <p className="next-up">
               Next up: {props.liveNow.jotunheimNextLiveState}
               <span> at {props.liveNow.nextLivesStart}</span>
             </p>
@@ -31,7 +29,7 @@ function PlayingNow(props) {
           <article className="playing-now-band">
             <h3>{props.liveNow.midgardLiveState}</h3>
             <p>At stage Midagrd</p>
-            <p>
+            <p className="next-up">
               Next up: {props.liveNow.midgardNextLiveState}
               <span> at {props.liveNow.nextLivesStart}</span>
             </p>
@@ -39,7 +37,7 @@ function PlayingNow(props) {
           <article className="playing-now-band">
             <h3>{props.liveNow.vanaheimLiveState}</h3>
             <p>At stage Vanaheim</p>
-            <p>
+            <p className="next-up">
               Next up: {props.liveNow.vanaheimNextLiveState}
               <span> at {props.liveNow.nextLivesStart}</span>
             </p>
