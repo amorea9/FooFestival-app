@@ -7,8 +7,12 @@ import { useState, useEffect } from "react";
 function Landing(props) {
   const [liveNow, setLiveNow] = useState({
     jotunheimLiveState: "",
+    jotunheimNextLiveState: "",
     midgardLiveState: "",
+    midgardNextLiveState: "",
     vanaheimLiveState: "",
+    vanaheimNextLiveState: "",
+    nextLivesStart: "",
     liveShowsAtm: true,
   });
 
@@ -39,7 +43,8 @@ function Landing(props) {
     setdateNow({ ...dateNow, today: day });
 
     //find current time in hours and minutes
-    const currentTime = now.getHours() + ":" + now.getMinutes();
+    //const currentTime = now.getHours() + ":" + now.getMinutes();
+    const currentTime = "16:01";
 
     //set live state of festival
     let isFoofestLive = false;
@@ -78,55 +83,116 @@ function Landing(props) {
     if (day === 6) {
       objDay = day - 1;
     }
-    //console.log("objDay", objDay);
-    //console.log("day", day);
-    //console.log("jotunheimByDays[objDay]:", jotunheimByDays, objDay);
 
     // Find Live at Jotunheim stage
     let todayAtJotunheim = jotunheimByDays[objDay];
     let liveAtJotunheim = "";
+    let jotunheimToday = "";
+    let nextLiveAtJotunheim = "";
+    let nextUpStart = "";
     todayAtJotunheim.forEach((show) => {
-      todayAtJotunheim = show.act;
+      jotunheimToday = show.act;
       let jotunheimStart = show.start;
       let jotunheimEnd = show.end;
+      let liveIndex = 0;
+      let nextUp = 0;
+      let nextActJotunheim = "";
       //find the act that is live now
-      if (todayAtJotunheim != "break" && currentTime > jotunheimStart && currentTime < jotunheimEnd) {
+      if (jotunheimToday != "break" && currentTime > jotunheimStart && currentTime < jotunheimEnd) {
+        //get index of event object
+        liveIndex = todayAtJotunheim.indexOf(show);
+        //console.log("jotunheimliveIndex:", jotunheimliveIndex);
         liveAtJotunheim = show.act;
         isFoofestLive = true;
+        // find next up
+        //get index of next event object
+        nextUp = liveIndex + 1;
+        //check if next event is "break"
+        if (todayAtJotunheim[nextUp].act === "break") {
+          nextUp = liveIndex + 2;
+          nextActJotunheim = todayAtJotunheim[nextUp].act;
+          nextUpStart = todayAtJotunheim[nextUp].start;
+          nextLiveAtJotunheim = nextActJotunheim;
+        }
+        nextUpStart = todayAtJotunheim[nextUp].start;
+        nextActJotunheim = todayAtJotunheim[nextUp].act;
+        nextLiveAtJotunheim = nextActJotunheim;
       }
     });
 
     //Find live at Midagard
     let todayAtMidgard = midgardByDays[objDay];
     let liveAtMidgard = "";
+    let midgardToday = "";
+    let nextLiveAtMidgard = "";
     todayAtMidgard.forEach((show) => {
-      todayAtMidgard = show.act;
+      midgardToday = show.act;
       let midgardStart = show.start;
       let midgardEnd = show.end;
+      let liveIndex = 0;
+      let nextUp = 0;
+      let nextActMidgard = "";
       //find the act that is live now
-      if (todayAtMidgard != "break" && currentTime > midgardStart && currentTime < midgardEnd) {
+      if (midgardToday != "break" && currentTime > midgardStart && currentTime < midgardEnd) {
+        //get index of event object
+        liveIndex = todayAtMidgard.indexOf(show);
         liveAtMidgard = show.act;
         isFoofestLive = true;
+
+        //find next up
+        //get index of next event object
+        nextUp = liveIndex + 1;
+        //check if next event is "break"
+        if (todayAtMidgard[nextUp].act === "break") {
+          nextUp = liveIndex + 2;
+          nextActMidgard = todayAtMidgard[nextUp].act;
+
+          nextLiveAtMidgard = nextActMidgard;
+        }
+        nextActMidgard = todayAtMidgard[nextUp].act;
+        nextLiveAtMidgard = nextActMidgard;
       }
     });
 
     //Find live at Vanaheim
     let todayAtVanaheim = vanaheimByDays[objDay];
     let liveAtVanaheim = "";
+    let vanaheimToday = "";
+    let nextLiveAtVanaheim = "";
     todayAtVanaheim.forEach((show) => {
-      todayAtVanaheim = show.act;
+      vanaheimToday = show.act;
       let vanaheimStart = show.start;
       let vanaheimdEnd = show.end;
+      let liveIndex = 0;
+      let nextUp = 0;
+      let nextActVanaheim = "";
       //find the act that is live now
-      if (todayAtVanaheim != "break" && currentTime > vanaheimStart && currentTime < vanaheimdEnd) {
+      if (vanaheimToday != "break" && currentTime > vanaheimStart && currentTime < vanaheimdEnd) {
+        liveIndex = todayAtVanaheim.indexOf(show);
         liveAtVanaheim = show.act;
         isFoofestLive = true;
+
+        //find next up
+        nextUp = liveIndex + 1;
+        //check if next event is "break"
+        if (todayAtVanaheim[nextUp].act === "break") {
+          nextUp = liveIndex + 2;
+          nextActVanaheim = todayAtVanaheim[nextUp].act;
+
+          nextLiveAtVanaheim = nextActVanaheim;
+        }
+        nextActVanaheim = todayAtVanaheim[nextUp].act;
+        nextLiveAtVanaheim = nextActVanaheim;
       }
       setLiveNow({
         ...liveNow,
         vanaheimLiveState: liveAtVanaheim,
+        vanaheimNextLiveState: nextLiveAtVanaheim,
         midgardLiveState: liveAtMidgard,
+        midgardNextLiveState: nextLiveAtMidgard,
         jotunheimLiveState: liveAtJotunheim,
+        jotunheimNextLiveState: nextLiveAtJotunheim,
+        nextLivesStart: nextUpStart,
         liveShowsAtm: isFoofestLive,
       });
     });
