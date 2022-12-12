@@ -1,12 +1,12 @@
-import BandCard from "./BandCard";
-function BandsList() {
+import Monday from "./Monday";
+import Tuesday from "./Tuesday";
+function BandsList(props) {
+  //bands playing by days at each stage
+
   return (
     <div className="bands-list">
-      <h2>Monday, July 17th</h2>
-      <div className="bands-list-wrapper">
-        <BandCard />
-        <BandCard />
-      </div>
+      <Monday scheduledBands={props.scheduledBands} />
+      <Tuesday scheduledBands={props.scheduledBands} />
     </div>
   );
 }
