@@ -1,6 +1,6 @@
 import React from "react";
 
-function PlayingNow() {
+function PlayingNow(props) {
   return (
     <article id="playingNow" className="playing-now-comp">
       <h2>
@@ -8,16 +8,16 @@ function PlayingNow() {
       </h2>
       <div className="playing-now-content">
         <article className="playing-now-band">
-          <h3>Metallica</h3>
-          <p>Stage here</p>
+          <h3>{props.liveNow.jotunheimLiveState}</h3>
+          <p>Jotunheim stage</p>
         </article>
         <article className="playing-now-band">
-          <h4>Metallica</h4>
-          <p>Stage here</p>
+          <h4>{props.liveNow.midgardLiveState}</h4>
+          <p>Midgard stage</p>
         </article>
         <article className="playing-now-band">
-          <p>Metallica</p>
-          <p>Stage here</p>
+          <p>{props.liveNow.vanaheimLiveState}</p>
+          <p>Vanaheim stage</p>
         </article>
       </div>
     </article>
