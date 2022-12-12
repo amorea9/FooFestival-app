@@ -1,11 +1,9 @@
-import React from "react";
-
 function PlayingNow(props) {
   if (props.liveNow.liveShowsAtm === false) {
     return (
       <article id="playingNow" className="playing-now-comp">
         <h2>
-          Playing now <span> </span>
+          Playing now <span>.</span>
         </h2>
         <div className="playing-now-none">
           <article>
@@ -18,8 +16,8 @@ function PlayingNow(props) {
   } else {
     return (
       <article id="playingNow" className="playing-now-comp">
-        <h2>
-          Playing now <span> </span>
+        <h2 className="playing-now-headline">
+          Playing now <span>.</span>
         </h2>
         <div className="playing-now-content">
           <article className="playing-now-band">

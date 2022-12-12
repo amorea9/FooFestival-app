@@ -56,27 +56,31 @@ function Landing(props) {
 
     //because data in schedule is provided as 0-based index from monday and date.getNow() counts = based index from Sunday we have to make the two values correlate
     let objDay = 0;
-    if (dateNow.today === 0) {
+
+    if (day === 0) {
       objDay = 6;
     }
-    if (dateNow.today === 1) {
+    if (day === 1) {
       objDay = day - 1;
     }
-    if (dateNow.today === 2) {
+    if (day === 2) {
       objDay = day - 1;
     }
-    if (dateNow.today === 3) {
+    if (day === 3) {
       objDay = day - 1;
     }
-    if (dateNow.today === 4) {
+    if (day === 4) {
       objDay = day - 1;
     }
-    if (dateNow.today === 5) {
+    if (day === 5) {
       objDay = day - 1;
     }
-    if (dateNow.today === 6) {
+    if (day === 6) {
       objDay = day - 1;
     }
+    //console.log("objDay", objDay);
+    //console.log("day", day);
+    //console.log("jotunheimByDays[objDay]:", jotunheimByDays, objDay);
 
     // Find Live at Jotunheim stage
     let todayAtJotunheim = jotunheimByDays[objDay];
