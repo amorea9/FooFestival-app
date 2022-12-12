@@ -11,7 +11,7 @@ function Landing(props) {
         <h2>17-23 July</h2>
         <p>The best damn festival ever</p>
       </section>
-      <PlayingNow />
+      <PlayingNow liveNow={props.liveNow} />
       <Schedule getProgramPage={props.getProgramPage} />
       <TodaysHeadliners />
       <article className="news-section">
