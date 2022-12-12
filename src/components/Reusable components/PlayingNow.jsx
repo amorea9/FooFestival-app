@@ -27,11 +27,11 @@ function PlayingNow(props) {
             <p>Jotunheim stage</p>
           </article>
           <article className="playing-now-band">
-            <h4>{props.liveNow.midgardLiveState}</h4>
+            <h3>{props.liveNow.midgardLiveState}</h3>
             <p>Midgard stage</p>
           </article>
           <article className="playing-now-band">
-            <p>{props.liveNow.vanaheimLiveState}</p>
+            <h3>{props.liveNow.vanaheimLiveState}</h3>
             <p>Vanaheim stage</p>
           </article>
         </div>
