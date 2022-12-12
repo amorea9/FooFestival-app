@@ -1,8 +1,10 @@
 import React from "react";
 import BandsList from "../Reusable components/BandsList";
 import searchIcon from "../../media/search-icon.svg";
+import { useOutletContext } from "react-router-dom";
 
-function Favourites() {
+function Favourites(props) {
+  const [scheduledBands, setScheduledBands] = useOutletContext();
   //remember to add "if no favourite" option to display a message
   return (
     <section className="favourite-page">
@@ -12,8 +14,7 @@ function Favourites() {
         <img className="search-icon" src={searchIcon} alt="search icon" />
       </div>
       <div className="bands-list-wrapper">
-        <BandsList />
-        <BandsList />
+        <BandsList scheduledBands={scheduledBands} />
       </div>
     </section>
   );

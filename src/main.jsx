@@ -9,6 +9,7 @@ import LoginPage from "./components/Pages/LoginPage";
 import ProgramPage from "./components/Pages/ProgramPage";
 import FavouritesPage from "./components/Pages/FavouritesPage";
 import BandPage from "./components/Pages/BandPage";
+
 const router = createBrowserRouter([
   {
     path: "/",
