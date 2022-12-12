@@ -43,8 +43,7 @@ function Landing(props) {
     setdateNow({ ...dateNow, today: day });
 
     //find current time in hours and minutes
-    //const currentTime = now.getHours() + ":" + now.getMinutes();
-    const currentTime = "16:01";
+    const currentTime = now.getHours() + ":" + now.getMinutes();
 
     //set live state of festival
     let isFoofestLive = false;
