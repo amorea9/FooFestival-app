@@ -11,9 +11,7 @@ function Landing(props) {
     live: [liveNow, setLiveNow],
     date: [dateNow, setdateNow],
   } = useOutletContext();
-  // console.log("playing now", liveNow);
-  // console.log("bands", scheduledBands);
-  // console.log("jotu only", Object.values(scheduledBands.Jotunheim.mon));
+
   return (
     <section className="landing-page">
       <section className="hero-section">
@@ -23,7 +21,7 @@ function Landing(props) {
       </section>
       <PlayingNow liveNow={liveNow} />
       <Schedule />
-      <TodaysHeadliners />
+      {/* <TodaysHeadliners /> */}
       <article className="news-section">
         <div>
           <h2>News & Updates</h2>

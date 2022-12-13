@@ -44,7 +44,6 @@ function App() {
   }, []);
 
   //called every 10 seconds
-  //called every 10 seconds
   function findLiveBands(data) {
     const schedule = data;
     const now = new Date();
