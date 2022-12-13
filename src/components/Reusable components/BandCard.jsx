@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import emptyHeart from "../../media/favourites-empty.svg";
 function BandCard(props) {
   return (
-    <Link className="band-card" to={"/band-page#top"}>
+    <Link className="band-card" to={`/band-page/${props.bandName}`}>
       <h3>{props.bandName}</h3>
       <div className="band-card-content">
         <div className="band-card-main-content">

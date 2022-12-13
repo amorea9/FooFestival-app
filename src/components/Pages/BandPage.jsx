@@ -1,9 +1,23 @@
 import React from "react";
 import BandCard from "../Reusable components/BandCard";
+import { useEffect } from "react";
 
-function BandPage() {
+function BandPage(props) {
   //using this const to render the see more in the band card in the list view but not on the band page view
   const page = "bandPage";
+
+  //fetching detailed bands data
+
+  useEffect(() => {
+    async function getBands() {
+      const res = await fetch("http://localhost:8080/bands");
+      const bands = await res.json();
+      // setScheduledBands(schedule);
+      console.log(bands);
+      //call the function every minute
+    }
+    getBands();
+  }, []);
   return (
     <section id="singleBandPage">
       <h1>Metallica</h1>
