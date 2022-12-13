@@ -33,7 +33,7 @@ const router = createBrowserRouter([
         element: <FavouritesPage />,
       },
       {
-        path: "/band-page",
+        path: "/band-page/:bandName",
         element: <BandPage />,
       },
     ],
