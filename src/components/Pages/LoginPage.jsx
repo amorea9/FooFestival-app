@@ -8,13 +8,13 @@ function LoginPage(props) {
   const logInBtn = document.querySelector("input[id=log-in-button]");
   console.log(logInBtn);
   const [ticketInput, setTicketInput] = useState("");
+
   function submit(e) {
-    if (ticketNr.value.length > 8) {
-      e.preventDefault();
-      props.setLogin(true);
-      navigate("/landing-page#top");
-    }
+    e.preventDefault();
+    props.setLogin(true);
+    navigate("/landing-page#top");
   }
+
   const handleTicketNr = (event) => {
     console.log(event.target.value);
     const result = event.target.value.toUpperCase();
@@ -31,9 +31,11 @@ function LoginPage(props) {
         <form onSubmit={submit} className="log-in-form">
           <h3>Log in</h3>
           <div className="email-input">
-            <label htmlFor="email"> Email </label>
+            <label htmlFor="email"> Email</label>
             <input
               required
+              pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
+              title="Must be a valid email address"
               aria-required="true"
               autoFocus
               id="email"
@@ -45,6 +47,7 @@ function LoginPage(props) {
           <div className="ticket-number-input">
             <label htmlFor="ticketNumber">Ticket number </label>
             <input
+              title="Must be a valid Ticket Number"
               required
               aria-required="true"
               id="ticketNumber"
