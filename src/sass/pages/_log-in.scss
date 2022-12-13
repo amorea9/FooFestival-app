@@ -21,6 +21,7 @@
   padding: 0.8rem 4.2rem;
   border-radius: 12px;
   border: 1px solid $white;
+  background-color: $grey;
   cursor: pointer;
   font-size: 1.1rem;
 }
@@ -42,4 +43,7 @@
   h1 {
     text-align: center;
   }
+}
+form:valid .log-in-button {
+  background-color: $white;
 }
