@@ -49,6 +49,7 @@ function LoginPage(props) {
             <input
               title="Must be a valid Ticket Number"
               required
+              pattern="[A-Za-z0-9]{9,9}"
               aria-required="true"
               id="ticketNumber"
               type="text"
