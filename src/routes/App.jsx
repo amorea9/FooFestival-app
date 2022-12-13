@@ -54,7 +54,13 @@ function App() {
     setdateNow({ ...dateNow, today: day });
 
     //find current time in hours and minutes
-    const currentTime = now.getHours() + ":" + now.getMinutes();
+    //const currentTime = now.getHours() + ":" + now.getMinutes();
+    let currentHours = now.getHours();
+    currentHours = ("0" + currentHours).slice(-2);
+    let currentMins = now.getMinutes();
+    currentMins = ("0" + currentMins).slice(-2);
+    const currentTime = currentHours + ":" + currentMins;
+    console.log("currentTime", currentTime);
 
     //set live state of festival
     let isFoofestLive = false;
@@ -113,6 +119,9 @@ function App() {
         liveIndex = todayAtJotunheim.indexOf(show);
         //console.log("jotunheimliveIndex:", jotunheimliveIndex);
         liveAtJotunheim = show.act;
+        console.log(jotunheimStart);
+        console.log(jotunheimEnd);
+        console.log(liveAtJotunheim);
         isFoofestLive = true;
         // find next up
         //get index of next event object
@@ -127,6 +136,7 @@ function App() {
         nextUpStart = todayAtJotunheim[nextUp].start;
         nextActJotunheim = todayAtJotunheim[nextUp].act;
         nextLiveAtJotunheim = nextActJotunheim;
+        console.log(nextActJotunheim);
       }
     });
 
@@ -152,16 +162,15 @@ function App() {
         //find next up
         //get index of next event object
         nextUp = liveIndex + 1;
-        //check if next event is "break"
-        if (todayAtMidgard[nextUp].act === "break") {
-          nextUp = liveIndex + 2;
-          nextActMidgard = todayAtMidgard[nextUp].act;
-
-          nextLiveAtMidgard = nextActMidgard;
-        }
+      }
+      //check if next event is "break"
+      if (todayAtMidgard[nextUp].act === "break") {
+        nextUp = liveIndex + 2;
         nextActMidgard = todayAtMidgard[nextUp].act;
         nextLiveAtMidgard = nextActMidgard;
       }
+      nextActMidgard = todayAtMidgard[nextUp].act;
+      nextLiveAtMidgard = nextActMidgard;
     });
 
     //Find live at Vanaheim
@@ -184,27 +193,26 @@ function App() {
 
         //find next up
         nextUp = liveIndex + 1;
-        //check if next event is "break"
-        if (todayAtVanaheim[nextUp].act === "break") {
-          nextUp = liveIndex + 2;
-          nextActVanaheim = todayAtVanaheim[nextUp].act;
-
-          nextLiveAtVanaheim = nextActVanaheim;
-        }
+      }
+      //check if next event is "break"
+      if (todayAtVanaheim[nextUp].act === "break") {
+        nextUp = liveIndex + 2;
         nextActVanaheim = todayAtVanaheim[nextUp].act;
         nextLiveAtVanaheim = nextActVanaheim;
       }
-      setLiveNow({
-        ...liveNow,
-        vanaheimLiveState: liveAtVanaheim,
-        vanaheimNextLiveState: nextLiveAtVanaheim,
-        midgardLiveState: liveAtMidgard,
-        midgardNextLiveState: nextLiveAtMidgard,
-        jotunheimLiveState: liveAtJotunheim,
-        jotunheimNextLiveState: nextLiveAtJotunheim,
-        nextLivesStart: nextUpStart,
-        liveShowsAtm: isFoofestLive,
-      });
+      nextActVanaheim = todayAtVanaheim[nextUp].act;
+      nextLiveAtVanaheim = nextActVanaheim;
+    });
+    setLiveNow({
+      ...liveNow,
+      vanaheimLiveState: liveAtVanaheim,
+      vanaheimNextLiveState: nextLiveAtVanaheim,
+      midgardLiveState: liveAtMidgard,
+      midgardNextLiveState: nextLiveAtMidgard,
+      jotunheimLiveState: liveAtJotunheim,
+      jotunheimNextLiveState: nextLiveAtJotunheim,
+      nextLivesStart: nextUpStart,
+      liveShowsAtm: isFoofestLive,
     });
   }
 

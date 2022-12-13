@@ -2,7 +2,6 @@ import React from "react";
 import PlayingNow from "../Reusable components/PlayingNow";
 import Schedule from "../Reusable components/Schedule";
 import TodaysHeadliners from "../Reusable components/TodaysHeadliners";
-import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 
 function Landing(props) {
