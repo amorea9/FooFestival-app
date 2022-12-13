@@ -5,7 +5,7 @@ function BandCard(props) {
   //navigate allows us to pass a path and a state (data) through the link to a different route
   const navigate = useNavigate();
   const toBandPage = () => {
-    navigate(`/band-page/${props.bandName}`, { state: props.bandName });
+    navigate(`/band-page/${props.bandName === "AC/DC" ? "ACDC" : props.bandName}`, { state: props.bandName });
   };
 
   return (

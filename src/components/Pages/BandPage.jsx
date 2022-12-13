@@ -35,6 +35,7 @@ function BandPage(props) {
   function defineBand(bands) {
     //filtering to find the band with the same name as the current one in the path
     const bandOnDisplay = bands.filter((band) => band.name === currentBand);
+
     //setting the band
     setBandDisplayed({ name: bandOnDisplay[0].name, members: bandOnDisplay[0].members, genre: bandOnDisplay[0].genre, logoCredits: bandOnDisplay[0].logoCredits, logo: bandOnDisplay[0].logo, bio: bandOnDisplay[0].bio });
   }
