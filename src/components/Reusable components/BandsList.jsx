@@ -6,8 +6,6 @@ import Wednesday from "./Wednesday";
 import Saturday from "./Saturday";
 import Sunday from "./Sunday";
 function BandsList(props) {
-  console.log("props scheduleByDays", props.scheduleByDays);
-  console.log(Object.keys(props.scheduleByDays));
   return (
     <div className="bands-list">
       <Monday scheduleByDays={props.scheduleByDays} />
