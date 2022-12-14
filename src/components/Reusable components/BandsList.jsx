@@ -11,12 +11,12 @@ function BandsList(props) {
   return (
     <div className="bands-list">
       <Monday scheduleByDays={props.scheduleByDays} />
-      {/*   <Tuesday scheduleByDays={props.scheduleByDays} />
+      <Tuesday scheduleByDays={props.scheduleByDays} />
       <Wednesday scheduleByDays={props.scheduleByDays} />
       <Thursday scheduleByDays={props.scheduleByDays} />
       <Friday scheduleByDays={props.scheduleByDays} />
       <Saturday scheduleByDays={props.scheduleByDays} />
-      <Sunday scheduleByDays={props.scheduleByDays} /> */}
+      <Sunday scheduleByDays={props.scheduleByDays} />
     </div>
   );
 }

@@ -13,12 +13,12 @@ function Program(props) {
 
   const [scheduleByDays, setScheduleByDays] = useState({
     monday: [],
-    tuesday: "",
-    wednesday: "",
-    thursday: "",
-    friday: "",
-    saturday: "",
-    sunday: "",
+    tuesday: [],
+    wednesday: [],
+    thursday: [],
+    friday: [],
+    saturday: [],
+    sunday: [],
   });
   //bands playing by days at each stage
   //monday

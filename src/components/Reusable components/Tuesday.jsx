@@ -6,16 +6,16 @@ function Tuesday(props) {
     <>
       <h2>Tuesday, July 18th</h2>
       <div className="bands-list-wrapper">
-        {props.allStagesTuesday.map((show) => {
+        {props.scheduleByDays.tuesday.map((show) => {
           return show.act != "break" ? (
             <BandCard
               key={show.act}
               start={show.start}
               end={show.end}
               stage={
-                props.allStagesTuesday.indexOf(show) <= 12
+                props.scheduleByDays.tuesday.indexOf(show) <= 12
                   ? "Jotunheim"
-                  : props.allStagesTuesday.indexOf(show) <= 24
+                  : props.scheduleByDays.tuesday.indexOf(show) <= 24
                   ? "Midgard"
                   : "Vanaheim"
               }

@@ -5,9 +5,21 @@ function Friday(props) {
     <>
       <h2>Friday, July 21st</h2>
       <div className="bands-list-wrapper">
-        {props.allStagesFriday.map((show) => {
+        {props.scheduleByDays.friday.map((show) => {
           return show.act != "break" ? (
-            <BandCard key={show.act} start={show.start} end={show.end} stage={props.allStagesFriday.indexOf(show) <= 12 ? "Jotunheim" : props.allStagesFriday.indexOf(show) <= 24 ? "Midgard" : "Vanaheim"} bandName={show.act} />
+            <BandCard
+              key={show.act}
+              start={show.start}
+              end={show.end}
+              stage={
+                props.scheduleByDays.friday.indexOf(show) <= 12
+                  ? "Jotunheim"
+                  : props.scheduleByDays.friday.indexOf(show) <= 24
+                  ? "Midgard"
+                  : "Vanaheim"
+              }
+              bandName={show.act}
+            />
           ) : null;
         })}
       </div>

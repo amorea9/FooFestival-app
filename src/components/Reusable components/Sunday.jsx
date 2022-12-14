@@ -5,7 +5,7 @@ function Sunday(props) {
     <>
       <h2>Sunday, July 23rd</h2>
       <div className="bands-list-wrapper">
-        {props.allStagesSunday.map((show) => {
+        {props.scheduleByDays.sunday.map((show) => {
           return show.act != "break" ? (
             <BandCard
               key={show.act}
@@ -14,7 +14,7 @@ function Sunday(props) {
               stage={
                 props.scheduleByDays.sunday.indexOf(show) <= 12
                   ? "Jotunheim"
-                  : props.scheduleByDays.indexOf(show) <= 24
+                  : props.scheduleByDays.sunday.indexOf(show) <= 24
                   ? "Midgard"
                   : "Vanaheim"
               }
