@@ -11,13 +11,24 @@ function Program(props) {
     schedule: [scheduledBands, setScheduledBands],
   } = useOutletContext();
 
-  const [scheduleByDays, setScheduleByDays] = useState({});
+  const [scheduleByDays, setScheduleByDays] = useState({
+    monday: "",
+    tuesday: "",
+    wednesday: "",
+    thursday: "",
+    friday: "",
+    saturday: "",
+    sunday: "",
+  });
   //bands playing by days at each stage
   //monday
   let jotunheimMonday = Object.values(scheduledBands.Jotunheim.mon);
   let midgardMonday = Object.values(scheduledBands.Midgard.mon);
   let vanaheimMonday = Object.values(scheduledBands.Vanaheim.mon);
   let allStagesMonday = jotunheimMonday.concat(midgardMonday, vanaheimMonday);
+  let mondayArray = { ...[allStagesMonday] };
+  console.log("allStagesMonday", allStagesMonday);
+  console.log("mondayArray", mondayArray);
   // tuesday
   // let jotunheimTuesday = Object.values(scheduledBands.Jotunheim.tue);
   // let midgardTuesday = Object.values(scheduledBands.Midgard.tue);
@@ -48,11 +59,11 @@ function Program(props) {
   // let midgardSunday = Object.values(scheduledBands.Midgard.tue);
   // let vanaheimSunday = Object.values(scheduledBands.Vanaheim.tue);
   // let allStagesSunday = jotunheimSunday.concat(midgardSunday, vanaheimSunday);
-  assignDays();
-  function assignDays() {
+
+  const settingTheSchedule = () => {
     setScheduleByDays({
       ...scheduleByDays,
-      monday: allStagesMonday,
+      monday: mondayArray,
       // tuesday: allStagesTuesday,
       // wednesday: allStagesWednesday,
       // thursday: allStagesThursday,
@@ -60,8 +71,7 @@ function Program(props) {
       // saturday: allStagesSaturday,
       // sunday: allStagesSunday,
     });
-  }
-  console.log("scheduleByDays", scheduleByDays);
+  };
   // console.log("schedule", scheduledBands);
   return (
     <section className="program-page">
@@ -75,7 +85,6 @@ function Program(props) {
         <input id="searchField" type="text" placeholder="search here" />
         <img className="search-icon" src={searchIcon} alt="search icon" />
       </div>
-
       <div className="bands-list-wrapper">
         <BandsList scheduleByDays={scheduleByDays} />
       </div>
