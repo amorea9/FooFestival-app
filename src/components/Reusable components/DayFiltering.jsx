@@ -1,6 +1,8 @@
 import React from "react";
+import { useState } from "react";
 
 function DayFiltering() {
+  const [filter, setFilter] = useState("");
   return (
     <select name="days" id="days">
       <option value="day" defaultValue>

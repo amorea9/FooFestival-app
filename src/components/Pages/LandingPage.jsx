@@ -1,8 +1,6 @@
 import React from "react";
 import PlayingNow from "../Reusable components/PlayingNow";
 import Schedule from "../Reusable components/Schedule";
-import TodaysHeadliners from "../Reusable components/TodaysHeadliners";
-import { useState, useEffect } from "react";
 import { useOutletContext } from "react-router-dom";
 
 function Landing(props) {
@@ -11,9 +9,7 @@ function Landing(props) {
     live: [liveNow, setLiveNow],
     date: [dateNow, setdateNow],
   } = useOutletContext();
-  // console.log("playing now", liveNow);
-  // console.log("bands", scheduledBands);
-  // console.log("jotu only", Object.values(scheduledBands.Jotunheim.mon));
+
   return (
     <section className="landing-page">
       <section className="hero-section">
@@ -23,7 +19,7 @@ function Landing(props) {
       </section>
       <PlayingNow liveNow={liveNow} />
       <Schedule />
-      <TodaysHeadliners />
+      {/* <TodaysHeadliners /> */}
       <article className="news-section">
         <div>
           <h2>News & Updates</h2>

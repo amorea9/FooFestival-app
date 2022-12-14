@@ -6,17 +6,17 @@ import Wednesday from "./Wednesday";
 import Saturday from "./Saturday";
 import Sunday from "./Sunday";
 function BandsList(props) {
-  //bands playing by days at each stage
-
+  console.log("props scheduleByDays", props.scheduleByDays);
+  console.log(Object.keys(props.scheduleByDays));
   return (
     <div className="bands-list">
-      <Monday scheduledBands={props.scheduledBands} />
-      <Tuesday scheduledBands={props.scheduledBands} />
-      <Wednesday scheduledBands={props.scheduledBands} />
-      <Thursday scheduledBands={props.scheduledBands} />
-      <Friday scheduledBands={props.scheduledBands} />
-      <Saturday scheduledBands={props.scheduledBands} />
-      <Sunday scheduledBands={props.scheduledBands} />
+      <Monday scheduleByDays={props.scheduleByDays} />
+      <Tuesday scheduleByDays={props.scheduleByDays} />
+      <Wednesday scheduleByDays={props.scheduleByDays} />
+      <Thursday scheduleByDays={props.scheduleByDays} />
+      <Friday scheduleByDays={props.scheduleByDays} />
+      <Saturday scheduleByDays={props.scheduleByDays} />
+      <Sunday scheduleByDays={props.scheduleByDays} />
     </div>
   );
 }
