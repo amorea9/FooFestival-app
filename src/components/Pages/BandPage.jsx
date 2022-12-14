@@ -52,9 +52,9 @@ function BandPage(props) {
       <div className="single-band-content">
         <div className="band-info-wrapper">
           <img src={bandDisplayed.logo} alt={bandDisplayed.logoCredits} />
-          <h2>{bandDisplayed.name}</h2>
+          <h3>{bandDisplayed.name}</h3>
           <p>{bandDisplayed.bio}</p>
-          <p>
+          <p className="genre">
             Genre : <span>{bandDisplayed.genre}</span>
           </p>
           <div className="members-section">
