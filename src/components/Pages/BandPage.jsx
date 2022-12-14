@@ -36,25 +36,35 @@ function BandPage(props) {
     //filtering to find the band with the same name as the current one in the path
     const bandOnDisplay = bands.filter((band) => band.name === currentBand);
     //setting the band
-    setBandDisplayed({ name: bandOnDisplay[0].name, members: bandOnDisplay[0].members, genre: bandOnDisplay[0].genre, logoCredits: bandOnDisplay[0].logoCredits, logo: bandOnDisplay[0].logo, bio: bandOnDisplay[0].bio });
+    setBandDisplayed({
+      name: bandOnDisplay[0].name,
+      members: bandOnDisplay[0].members,
+      genre: bandOnDisplay[0].genre,
+      logoCredits: bandOnDisplay[0].logoCredits,
+      logo: bandOnDisplay[0].logo,
+      bio: bandOnDisplay[0].bio,
+    });
   }
 
   return (
     <section id="singleBandPage">
       <h1>{bandDisplayed.name}</h1>
       <div className="single-band-content">
-        <img src={bandDisplayed.logo} alt={bandDisplayed.logoCredits} />
-        <p>{bandDisplayed.bio}</p>
-        <p>
-          Genre : <span>{bandDisplayed.genre}</span>
-        </p>
-        <div className="members-section">
-          <p> Members :</p>
-          <ul className="members-list" aria-label="Members:">
-            {bandDisplayed.members.map((member) => {
-              return <li key={member}>{member}</li>;
-            })}
-          </ul>
+        <div className="band-info-wrapper">
+          <img src={bandDisplayed.logo} alt={bandDisplayed.logoCredits} />
+          <h2>{bandDisplayed.name}</h2>
+          <p>{bandDisplayed.bio}</p>
+          <p>
+            Genre : <span>{bandDisplayed.genre}</span>
+          </p>
+          <div className="members-section">
+            <p> Members :</p>
+            <ul className="members-list" aria-label="Members:">
+              {bandDisplayed.members.map((member) => {
+                return <li key={member}>{member}</li>;
+              })}
+            </ul>
+          </div>
         </div>
         <div className="live-next">
           <h3>

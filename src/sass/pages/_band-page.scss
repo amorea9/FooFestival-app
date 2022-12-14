@@ -17,6 +17,16 @@
   img {
     object-fit: cover;
     max-width: 100%;
+    border-radius: 16px;
+  }
+}
+.band-info-wrapper {
+  background-color: #1f1f1f;
+  border-radius: 16px;
+  /*  padding: 0rem 0.5rem 1rem 0.5rem; */
+  p,
+  h2 {
+    padding: 0.5rem 1rem 0 1rem;
   }
 }
 .live-next {
@@ -39,6 +49,11 @@
   flex-direction: column;
   gap: 0.5rem;
   margin: 1rem 0;
+  .members-list {
+    li {
+      padding-left: 1rem;
+    }
+  }
 }
 .single-band-content > p {
   margin: 1rem 0rem;
