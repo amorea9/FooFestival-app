@@ -1,15 +1,14 @@
 import React from "react";
 
-function StageFiltering() {
+function StageFiltering(props) {
   return (
-    <select name="stages" id="stages">
-      <option value="stage" defaultValue>
-        --stage--
+    <select onChange={props.stageChanged} name="stages" id="stages">
+      <option value="all" defaultValue>
+        All stages
       </option>
-      <option value="all">All</option>
-      <option value="midgard">Midgard</option>
-      <option value="vanaheim">Vanaheim</option>
-      <option value="jotunheim">Jotunheim</option>
+      <option value="Midgard">Midgard</option>
+      <option value="Vanaheim">Vanaheim</option>
+      <option value="Jotunheim">Jotunheim</option>
     </select>
   );
 }

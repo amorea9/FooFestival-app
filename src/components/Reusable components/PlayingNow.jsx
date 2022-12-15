@@ -7,8 +7,8 @@ function PlayingNow(props) {
         </h2>
         <div className="playing-now-none">
           <article>
-            <h3>Currently there is no live acts</h3>
-            <p>The next live acts will begin at {props.liveNow.nextLivesStart}</p>
+            <h3>Currently there are no live shows</h3>
+            <p>The next live show will begin at {props.liveNow.nextLivesStart}</p>
           </article>
         </div>
       </article>
