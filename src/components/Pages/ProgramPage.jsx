@@ -5,6 +5,7 @@ import StageFiltering from "../Reusable components/StageFiltering";
 import searchIcon from "../../media/search-icon.svg";
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
+import BandsListFull from "../Reusable components/BandsListFull";
 
 function Program(props) {
   const {
@@ -147,7 +148,9 @@ function Program(props) {
         <img className="search-icon" src={searchIcon} alt="search icon" />
       </div>
       <div className="bands-list-wrapper">
-        <BandsList filteredList={filteredList} filter={filter} />
+        {filter !== "all" && <BandsList filteredList={filteredList} filter={filter} />}
+
+        {filter === "all" && <BandsListFull scheduleWithDays={scheduleWithDays} filter={filter} />}
       </div>
     </section>
   );
