@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import BandsList from "../Reusable components/BandsList";
 import DayFiltering from "../Reusable components/DayFiltering";
 import StageFiltering from "../Reusable components/StageFiltering";
-import searchIcon from "../../media/search-icon.svg";
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import BandsListFull from "../Reusable components/BandsListFull";
+import SearchBar from "../Reusable components/SearchBar";
 
 function Program(props) {
   const {
@@ -13,6 +13,8 @@ function Program(props) {
   } = useOutletContext();
 
   const [filter, setFilter] = useState("monday");
+  const [searchBy, setSearchBy] = useState("");
+
   // const [filteredList, setFilteredList] = useState([scheduledBands]);
 
   // const [scheduleByDays, setScheduleByDays] = useState([{}]);
@@ -55,7 +57,14 @@ function Program(props) {
   let allStagesSunday = jotunheimSunday.concat(midgardSunday, vanaheimSunday);
 
   //full schedule all days all stages
-  const fullSchedule = allStagesMonday.concat(allStagesTuesday, allStagesWednesday, allStagesThursday, allStagesFriday, allStagesSaturday, allStagesSunday);
+  const fullSchedule = allStagesMonday.concat(
+    allStagesTuesday,
+    allStagesWednesday,
+    allStagesThursday,
+    allStagesFriday,
+    allStagesSaturday,
+    allStagesSunday
+  );
 
   // const fullSchedule = {
   //   monday: allStagesMonday,
@@ -116,7 +125,7 @@ function Program(props) {
   }
 
   addDay();
-  console.log("scheduleWithDays", scheduleWithDays);
+  //console.log("scheduleWithDays", scheduleWithDays);
 
   const filterChanged = (e) => {
     setFilter(e.target.value);
@@ -126,13 +135,50 @@ function Program(props) {
 
   if (filter === "all") {
     filteredList = scheduleWithDays;
-    console.log("filteredlist all", filteredList);
+    //console.log("filteredlist all", filteredList);
   }
 
   if (filter) {
     //gives the array with the same day of the week as the filter
     filteredList = scheduleWithDays.filter((show) => show.day === filter);
-    console.log("filtered list for specific day", filteredList);
+    //console.log("filtered list for specific day", filteredList);
+  }
+
+  //adding search functionality
+  let singleBand = "";
+  const band = filteredList.forEach((show) => {
+    if (show.act != "break") {
+      singleBand = show;
+    }
+    //return show.act != "break" ? show.act : null;
+  });
+  console.log("band", singleBand);
+
+  let searchedList = [];
+  let searchInput = "";
+  let searchedBand;
+  const getSearchValue = (e) => {
+    let searchInput = e.target.value.toLowerCase();
+    console.log("searchInput", searchInput);
+    setSearchBy(searchInput);
+    isSearchedBand(singleBand);
+  };
+  function isSearchedBand(singleBand) {
+    //console.log("band in isSearchedBand", singleBand);
+    console.log("searchInput in isSearcheBand", searchInput);
+    if (singleBand.act.toLowerCase().includes(searchInput)) {
+      let searchedBand = singleBand;
+      searchedList.push(searchedBand);
+      // console.log("searchedList in isSearchedBand", searchedList);
+    }
+    /*    if (band.toLowerCase().includes(searchInput)) {
+      console.log("it's the band");
+    } */
+    //console.log("filteredList in search"), filteredList;
+  }
+  if (searchBy) {
+    searchedList = filteredList.filter(isSearchedBand);
+    console.log("something is being searched");
   }
 
   return (
@@ -143,10 +189,7 @@ function Program(props) {
         <DayFiltering filterChanged={filterChanged} setFilter={setFilter} />
         <StageFiltering scheduledBands={scheduledBands} />
       </div>
-      <div className="search-nav">
-        <input id="searchField" type="text" placeholder="search here" />
-        <img className="search-icon" src={searchIcon} alt="search icon" />
-      </div>
+      <SearchBar getSearchValue={getSearchValue} />
       <div className="bands-list-wrapper">
         {filter !== "all" && <BandsList filteredList={filteredList} filter={filter} />}
 
