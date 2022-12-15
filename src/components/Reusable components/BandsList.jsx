@@ -14,6 +14,7 @@ function BandsList(props) {
       {props.filter.stage === "Midgard" && props.filter.day === "all" ? <h2>Midgard</h2> : null}
       {props.filter.stage === "Vanaheim" && props.filter.day === "all" ? <h2>Vanaheim</h2> : null}
       {props.filter.stage === "Jotunheim" && props.filter.day === "all" ? <h2>Jotunheim</h2> : null}
+      {props.filter.stage === "all" && props.filter.day === "all" ? <h2>Full lineup</h2> : null}
       <div className="bands-list-wrapper">
         {props.filteredList.map((show) => {
           return show.act != "break" ? <BandCard key={show.act} start={show.start} end={show.end} stage={show.stage} day={show.day} bandName={show.act} /> : null;
