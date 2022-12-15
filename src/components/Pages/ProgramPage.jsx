@@ -160,17 +160,17 @@ function Program(props) {
 
   const filterChanged = (e) => {
     setFilter({ ...filter, day: e.target.value });
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   const stageChanged = (e) => {
     setFilter({ ...filter, stage: e.target.value });
-    console.log(e.target.value);
+    // console.log(e.target.value);
   };
 
   let filteredList = scheduleWithStageAndDays;
-  console.log("filters", filter);
-  console.log("filteredlist all", filteredList);
+  //console.log("filters", filter);
+  //console.log("filteredlist all", filteredList);
 
   //by default filters are on all
   // if (filter.day === "all" || filter.stage === "all") {
@@ -184,13 +184,19 @@ function Program(props) {
   if (filter.stage != "all") {
     //if filtered by stage
     filteredList = scheduleWithStageAndDays.filter((show) => show.stage === filter.stage);
-    console.log("stage array", filteredList);
+    // console.log("stage array", filteredList);
   }
   if (filter.day != "all" && filter.stage != "all") {
     //if filtered by both
     filteredList = scheduleWithStageAndDays.filter((show) => show.day === filter.day && show.stage === filter.stage);
   }
-  console.log("filtered list for specific day", filteredList);
+  // console.log("filtered list for specific day", filteredList);
+
+  //search for band
+  const searchBand = (e) => {
+    const search = e.target.value;
+    console.log(search);
+  };
 
   return (
     <section className="program-page">
@@ -201,7 +207,7 @@ function Program(props) {
         <StageFiltering stageChanged={stageChanged} />
       </div>
       <div className="search-nav">
-        <input id="searchField" type="text" placeholder="search here" />
+        <input id="searchField" type="text" placeholder="search here" onKeyUp={searchBand} />
         <img className="search-icon" src={searchIcon} alt="search icon" />
       </div>
       <div className="bands-list-wrapper">

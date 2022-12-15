@@ -1,7 +1,6 @@
 import BandCard from "./BandCard";
 
 function BandsList(props) {
-  console.log("filtered List from band list", props.filteredList);
   return (
     <div className="bands-list">
       {props.filter.day === "Monday" ? <h2>Monday, July 17th</h2> : null}
