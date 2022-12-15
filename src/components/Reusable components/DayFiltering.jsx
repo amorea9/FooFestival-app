@@ -1,14 +1,11 @@
 import React from "react";
-import { useState } from "react";
 
-function DayFiltering() {
-  const [filter, setFilter] = useState("");
+function DayFiltering(props) {
   return (
-    <select name="days" id="days">
-      <option value="day" defaultValue>
-        --week day--
+    <select onChange={props.filterChanged} name="days" id="days">
+      <option value="all" defaultValue>
+        All
       </option>
-      <option value="all">All</option>
       <option value="monday">Monday</option>
       <option value="tuesday">Tuesday</option>
       <option value="wednesday">Wednesday</option>
