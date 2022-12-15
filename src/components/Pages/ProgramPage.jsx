@@ -14,6 +14,7 @@ function Program(props) {
   const [filter, setFilter] = useState({
     day: "all",
     stage: "all",
+    search: "",
   });
   // const [filteredList, setFilteredList] = useState([scheduledBands]);
 
@@ -167,16 +168,12 @@ function Program(props) {
     setFilter({ ...filter, stage: e.target.value });
     // console.log(e.target.value);
   };
+  const searchBand = (e) => {
+    setFilter({ ...filter, search: e.target.value.toLowerCase() });
+    // console.log(e.target.value);
+  };
 
   let filteredList = scheduleWithStageAndDays;
-  //console.log("filters", filter);
-  //console.log("filteredlist all", filteredList);
-
-  //by default filters are on all
-  // if (filter.day === "all" || filter.stage === "all") {
-  //   filteredList = scheduleWithStageAndDays;
-  // }
-
   //if filtered by day
   if (filter.day != "all") {
     filteredList = scheduleWithStageAndDays.filter((show) => show.day === filter.day);
@@ -190,13 +187,9 @@ function Program(props) {
     //if filtered by both
     filteredList = scheduleWithStageAndDays.filter((show) => show.day === filter.day && show.stage === filter.stage);
   }
-  // console.log("filtered list for specific day", filteredList);
-
-  //search for band
-  const searchBand = (e) => {
-    const search = e.target.value;
-    console.log(search);
-  };
+  if (filter.search != "") {
+    filteredList = scheduleWithStageAndDays.filter((show) => show.act.toLowerCase().includes(filter.search));
+  }
 
   return (
     <section className="program-page">
