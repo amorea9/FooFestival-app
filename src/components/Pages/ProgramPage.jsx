@@ -5,14 +5,16 @@ import StageFiltering from "../Reusable components/StageFiltering";
 import searchIcon from "../../media/search-icon.svg";
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
-import BandsListFull from "../Reusable components/BandsListFull";
 
 function Program(props) {
   const {
     schedule: [scheduledBands, setScheduledBands],
   } = useOutletContext();
 
-  const [filter, setFilter] = useState("monday");
+  const [filter, setFilter] = useState({
+    day: "all",
+    stage: "all",
+  });
   // const [filteredList, setFilteredList] = useState([scheduledBands]);
 
   // const [scheduleByDays, setScheduleByDays] = useState([{}]);
@@ -79,78 +81,131 @@ function Program(props) {
       if (fullSchedule.indexOf(item) <= 36) {
         return {
           ...item,
-          day: "monday",
+          day: "Monday",
         };
       } else if (fullSchedule.indexOf(item) <= 36 * 2) {
         return {
           ...item,
-          day: "tuesday",
+          day: "Tuesday",
         };
       } else if (fullSchedule.indexOf(item) <= 36 * 3) {
         return {
           ...item,
-          day: "wednesday",
+          day: "Wednesday",
         };
       } else if (fullSchedule.indexOf(item) <= 36 * 4) {
         return {
           ...item,
-          day: "thursday",
+          day: "Thursday",
         };
       } else if (fullSchedule.indexOf(item) <= 36 * 5) {
         return {
           ...item,
-          day: "friday",
+          day: "Friday",
         };
       } else if (fullSchedule.indexOf(item) <= 36 * 6) {
         return {
           ...item,
-          day: "saturday",
+          day: "Saturday",
         };
       } else if (fullSchedule.indexOf(item) <= 36 * 7) {
         return {
           ...item,
-          day: "sunday",
+          day: "Sunday",
+        };
+      }
+    });
+  }
+
+  let scheduleWithStageAndDays;
+  function addStage() {
+    scheduleWithStageAndDays = scheduleWithDays.map((item) => {
+      if (
+        scheduleWithDays.indexOf(item) < 12 ||
+        (scheduleWithDays.indexOf(item) >= 36 && scheduleWithDays.indexOf(item) <= 47) ||
+        (scheduleWithDays.indexOf(item) >= 72 && scheduleWithDays.indexOf(item) <= 83) ||
+        (scheduleWithDays.indexOf(item) >= 107 && scheduleWithDays.indexOf(item) <= 119) ||
+        (scheduleWithDays.indexOf(item) >= 144 && scheduleWithDays.indexOf(item) <= 155) ||
+        (scheduleWithDays.indexOf(item) >= 180 && scheduleWithDays.indexOf(item) <= 191) ||
+        (scheduleWithDays.indexOf(item) >= 216 && scheduleWithDays.indexOf(item) <= 227)
+      ) {
+        return {
+          ...item,
+          stage: "Jotunheim",
+        };
+      } else if (
+        scheduleWithDays.indexOf(item) < 12 + 12 ||
+        (scheduleWithDays.indexOf(item) >= 36 + 12 && scheduleWithDays.indexOf(item) <= 47 + 12) ||
+        (scheduleWithDays.indexOf(item) >= 72 + 12 && scheduleWithDays.indexOf(item) <= 83 + 12) ||
+        (scheduleWithDays.indexOf(item) >= 107 + 12 && scheduleWithDays.indexOf(item) <= 119 + 12) ||
+        (scheduleWithDays.indexOf(item) >= 144 + 12 && scheduleWithDays.indexOf(item) <= 155 + 12) ||
+        (scheduleWithDays.indexOf(item) >= 180 + 12 && scheduleWithDays.indexOf(item) <= 191 + 12) ||
+        (scheduleWithDays.indexOf(item) >= 216 + 12 && scheduleWithDays.indexOf(item) <= 227 + 12)
+      ) {
+        return {
+          ...item,
+          stage: "Midgard",
+        };
+      } else {
+        return {
+          ...item,
+          stage: "Vanaheim",
         };
       }
     });
   }
 
   addDay();
-  console.log("scheduleWithDays", scheduleWithDays);
+  addStage();
 
   const filterChanged = (e) => {
-    setFilter(e.target.value);
+    setFilter({ ...filter, day: e.target.value });
     console.log(e.target.value);
   };
-  let filteredList;
 
-  if (filter === "all") {
-    filteredList = scheduleWithDays;
-    console.log("filteredlist all", filteredList);
-  }
+  const stageChanged = (e) => {
+    setFilter({ ...filter, stage: e.target.value });
+    console.log(e.target.value);
+  };
 
-  if (filter) {
-    //gives the array with the same day of the week as the filter
-    filteredList = scheduleWithDays.filter((show) => show.day === filter);
-    console.log("filtered list for specific day", filteredList);
+  let filteredList = scheduleWithStageAndDays;
+  console.log("filters", filter);
+  console.log("filteredlist all", filteredList);
+
+  //by default filters are on all
+  // if (filter.day === "all" || filter.stage === "all") {
+  //   filteredList = scheduleWithStageAndDays;
+  // }
+
+  //if filtered by day
+  if (filter.day != "all") {
+    filteredList = scheduleWithStageAndDays.filter((show) => show.day === filter.day);
   }
+  if (filter.stage != "all") {
+    //if filtered by stage
+    filteredList = scheduleWithStageAndDays.filter((show) => show.stage === filter.stage);
+    console.log("stage array", filteredList);
+  }
+  if (filter.day != "all" && filter.stage != "all") {
+    //if filtered by both
+    filteredList = scheduleWithStageAndDays.filter((show) => show.day === filter.day && show.stage === filter.stage);
+  }
+  console.log("filtered list for specific day", filteredList);
 
   return (
     <section className="program-page">
       <h1>Program 2023</h1>
       <label htmlFor="filters-nav">Filter by: </label>
       <div id="filtersNav">
-        <DayFiltering filterChanged={filterChanged} setFilter={setFilter} />
-        <StageFiltering scheduledBands={scheduledBands} />
+        <DayFiltering filterChanged={filterChanged} />
+        <StageFiltering stageChanged={stageChanged} />
       </div>
       <div className="search-nav">
         <input id="searchField" type="text" placeholder="search here" />
         <img className="search-icon" src={searchIcon} alt="search icon" />
       </div>
       <div className="bands-list-wrapper">
-        {filter !== "all" && <BandsList filteredList={filteredList} filter={filter} />}
-
-        {filter === "all" && <BandsListFull scheduleWithDays={scheduleWithDays} filter={filter} />}
+        <BandsList filteredList={filteredList} filter={filter} />
       </div>
     </section>
   );
