@@ -56,24 +56,27 @@ button {
   border: 1px solid $white;
   cursor: pointer;
 }
-.primary-button {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-  align-items: center;
-  padding: 0.8rem 1.6rem;
-  border-radius: 12px;
-  border: 1px solid $white;
-  cursor: pointer;
-  width: max-content;
-  object-fit: contain;
-  max-width: 100%;
-  svg {
-    color: $orange;
-  }
+//log out btn top nav
+.log-out-btn {
+  border: $border-white;
+  border-radius: 4px;
+  padding: 0.5rem;
+  padding-inline: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: $white;
+  overflow: hidden;
+  width: fit-content;
+  font-size: 1rem;
 }
-//arrow in schedule button
-.bi-arrow-right {
-  fill: §orange;
+.log-out-btn:hover {
+  border-color: $orange;
+  transition: all 0.3s ease-in;
+}
+
+@media only screen and (min-width: 600px) {
+  .log-out-btn {
+    height: 2.8rem;
+    font-size: 1.3rem;
+  }
 }
