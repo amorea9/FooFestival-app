@@ -6,7 +6,9 @@
   justify-content: flex-start;
   gap: 1rem;
 }
-
+.search-nav {
+  justify-content: space-between;
+}
 #days,
 #stages {
   padding: 0.5rem 1rem;
@@ -17,7 +19,10 @@
   color: $white;
   font-family: $font-Inter;
   width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
 }
+
 #searchField {
   outline: none;
   border: none;
@@ -29,9 +34,20 @@
   padding-left: 1rem;
   width: 100%;
   position: relative;
+  font-size: 1rem;
 }
 
 .search-icon {
   position: absolute;
-  right: 10%;
+  right: 5%;
 }
+@media only screen and (max-width: 599px) {
+  .search-icon {
+    right: 7%;
+  }
+}
+@media only screen and (max-width: 499px) {
+  .search-icon {
+    right: 10.5%;
+  }
+} ;

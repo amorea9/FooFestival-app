@@ -20,7 +20,7 @@ function BandCard(props) {
       <h3>{props.bandName}</h3>
       <div className="band-card-content">
         <div className="band-card-main-content">
-          <p>{props.stage}</p>
+          <p>Stage {props.stage}</p>
           <p> {props.day} </p>
           <p>
             {props.start} - {props.end}

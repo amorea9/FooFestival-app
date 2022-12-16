@@ -22,6 +22,12 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
+  p:last-of-type {
+    transition: all 0.3s ease-in;
+  }
+  p:last-of-type:hover {
+    color: $orange;
+  }
 }
 .band-card-side-content {
   display: flex;
@@ -34,6 +40,13 @@
   padding: 1rem;
   border-radius: 20px;
   width: 100%;
+  cursor: pointer;
+  /* box-shadow: 0px 4px 7.5px rgba(255, 128, 44, 0.025); */
+  transition: all 0.3s ease 0s;
+}
+.band-card:hover {
+  /*  box-shadow: 4px 8px rgba(255, 128, 44, 0.5); */
+  box-shadow: rgba(139, 139, 139, 0.2) 0px 7px 10px, rgba(31, 31, 31, 1) 0px 5px 5px;
 }
 .bands-list {
   h2 {
