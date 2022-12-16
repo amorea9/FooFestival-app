@@ -12,6 +12,7 @@ function TopNav(props) {
       </Link>
 
       <Link
+        className="log-out-btn"
         onClick={() => {
           props.setLogin(false);
           navigate("/log-in");
