@@ -45,13 +45,17 @@ function BandPage(props) {
       bio: bandOnDisplay[0].bio,
     });
   }
+  let logoPath = `http://localhost:8080/logos/${bandDisplayed.logo}`;
+
+  //may be https when we change to fly
 
   return (
     <section id="singleBandPage">
       <h1>{bandDisplayed.name}</h1>
       <div className="single-band-content">
         <div className="band-info-wrapper">
-          <img src={bandDisplayed.logo} alt={bandDisplayed.logoCredits} />
+          {bandDisplayed.logo.includes("https") ? <img src={bandDisplayed.logo} alt={bandDisplayed.logoCredits} /> : <img src={logoPath} alt={bandDisplayed.logoCredits} />}
+
           <h3>{bandDisplayed.name}</h3>
           <p>{bandDisplayed.bio}</p>
           <p className="genre">
@@ -64,8 +68,10 @@ function BandPage(props) {
                 return <li key={member}>{member}</li>;
               })}
             </ul>
+            {bandDisplayed.logoCredits != "" ? <p>Credits: {bandDisplayed.logoCredits}</p> : null}
           </div>
         </div>
+
         <div className="live-next">
           <h3>
             See <span>{bandDisplayed.name}</span> live:
