@@ -8,7 +8,7 @@ function TopNav(props) {
   return (
     <nav className="top-nav">
       <Link to={"/landing-page#top"}>
-        <img src={logo} alt="favourites icon" />{" "}
+        <img src={logo} className="nav-logo" alt="favourites icon" />{" "}
       </Link>
 
       <Link

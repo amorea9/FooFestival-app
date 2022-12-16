@@ -1,0 +1,54 @@
+.SplashContainer {
+  height: 90vh;
+  max-width: fit-content;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  h1 {
+    display: block;
+    text-align: center;
+    mix-blend-mode: exclusion;
+  }
+}
+
+.SplashContainer::before {
+  //    ALT
+  //   background-image: url("../public/assets/Bases-Purple.png");
+  //   background-position: -100% 55%;
+  //   background-size: 115%;
+  //insert alt from here
+  content: "";
+  position: absolute;
+  height: 200vh;
+  width: 200vw;
+  background-image: url("../media/fullImageWGrain.webp");
+  background-position: 20% 65%;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  //insert alt to here
+  z-index: -1;
+  animation: orbit 20s infinite linear;
+  transform-origin: 73vw 93vh;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+//mobile media query
+
+@media screen and (max-width: 830px) {
+  .SplashContainer {
+    h1 {
+      font-size: 4.5rem;
+      overflow: hidden;
+    }
+  }
+}

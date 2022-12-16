@@ -12,10 +12,13 @@ function Landing(props) {
 
   return (
     <section className="landing-page">
-      <section className="hero-section">
-        <h1> FooFest 2023</h1>
-        <h2>17-23 July</h2>
-        <p>The best damn festival ever</p>
+      {/* <section className="hero-section"> */}
+      <section className="SplashContainer">
+        <h1>The best damned festival</h1>
+        <h1>
+          Is here <br /> now
+        </h1>
+        {/* </section> */}
       </section>
       <PlayingNow liveNow={liveNow} />
       <Schedule />
