@@ -2,3 +2,41 @@
   display: flex;
   justify-content: flex-end;
 }
+.primary-button {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: 12px;
+  border: 1px solid $white;
+  cursor: pointer;
+  width: max-content;
+  object-fit: contain;
+  max-width: 100%;
+
+  svg {
+    color: $orange;
+  }
+  //arrow in schedule button
+  .bi-arrow-right {
+    filter: invert(63%) sepia(45%) saturate(3893%) hue-rotate(340deg) brightness(104%) contrast(101%);
+  }
+}
+
+.primary-button:hover {
+  border-color: $orange;
+  transition: all 0.4s ease-in;
+  a {
+    padding-right: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .primary-button {
+    width: 100%;
+  }
+  .button-container {
+    justify-content: center;
+  }
+}
