@@ -91,3 +91,15 @@ button {
 .empty-heart-icon:hover {
   filter: invert(63%) sepia(45%) saturate(3993%) hue-rotate(330deg) brightness(90%) contrast(85%);
 }
+
+//message on favourites page
+
+.user-message {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 12vh;
+}
