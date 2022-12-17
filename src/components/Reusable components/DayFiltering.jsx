@@ -2,7 +2,7 @@ import React from "react";
 
 function DayFiltering(props) {
   return (
-    <select onChange={props.filterChanged} name="days" id="days">
+    <select onChange={props.filterChanged} name="days" id="days" className="days">
       <option value="all" defaultValue>
         All days
       </option>

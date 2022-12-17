@@ -58,7 +58,14 @@ function Program(props) {
   let allStagesSunday = jotunheimSunday.concat(midgardSunday, vanaheimSunday);
 
   //full schedule all days all stages
-  const fullSchedule = allStagesMonday.concat(allStagesTuesday, allStagesWednesday, allStagesThursday, allStagesFriday, allStagesSaturday, allStagesSunday);
+  const fullSchedule = allStagesMonday.concat(
+    allStagesTuesday,
+    allStagesWednesday,
+    allStagesThursday,
+    allStagesFriday,
+    allStagesSaturday,
+    allStagesSunday
+  );
 
   // const fullSchedule = {
   //   monday: allStagesMonday,
@@ -195,15 +202,17 @@ function Program(props) {
     <section className="program-page">
       <h1>Program 2023</h1>
       <label htmlFor="filters-nav">Filter by: </label>
-      <div id="filtersNav">
-        <DayFiltering filterChanged={filterChanged} />
-        <StageFiltering stageChanged={stageChanged} />
+      <div className="filters-wrapper">
+        <div id="filtersNav">
+          <DayFiltering filterChanged={filterChanged} />
+          <StageFiltering stageChanged={stageChanged} />
+        </div>
+        <div className="search-nav">
+          <input id="searchField" type="text" placeholder="search here" onKeyUp={searchBand} />
+          <img className="search-icon" id="searchIcon" src={searchIcon} alt="search icon" />
+        </div>
       </div>
-      <div className="search-nav">
-        <input id="searchField" type="text" placeholder="search here" onKeyUp={searchBand} />
-        <img className="search-icon" src={searchIcon} alt="search icon" />
-      </div>
-      <div className="bands-list-wrapper">
+      <div className="bands-list-comp-wrapper">
         <BandsList filteredList={filteredList} filter={filter} />
       </div>
     </section>

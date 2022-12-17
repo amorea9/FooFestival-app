@@ -14,14 +14,6 @@
   width: max-content;
   object-fit: contain;
   max-width: 100%;
-
-  svg {
-    color: $orange;
-  }
-  //arrow in schedule button
-  .bi-arrow-right {
-    filter: invert(63%) sepia(45%) saturate(3893%) hue-rotate(340deg) brightness(104%) contrast(101%);
-  }
 }
 
 .primary-button:hover {
