@@ -6,12 +6,30 @@
   gap: 1rem;
   margin-top: 1.3rem;
 }
+.bands-list-comp-wrapper {
+  margin-top: 1.3rem;
+}
+@media only screen and (min-width: 799px) {
+  .bands-list-wrapper {
+    display: grid;
+    justify-content: center;
+    /*  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); */
+    grid-template-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    width: 66%;
+  }
+  .band-card {
+    width: 50%;
+  }
+}
 .band-card-content {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
   gap: 4rem;
   p {
     margin: 0;
@@ -22,13 +40,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.5rem;
-  p:last-of-type {
-    transition: all 0.3s ease-in;
-  }
-  p:last-of-type:hover {
-    color: $orange;
-  }
 }
+
 .band-card-side-content {
   display: flex;
   flex-direction: column;
@@ -48,6 +61,33 @@
   /*  box-shadow: 4px 8px rgba(255, 128, 44, 0.5); */
   box-shadow: rgba(139, 139, 139, 0.2) 0px 7px 10px, rgba(31, 31, 31, 1) 0px 5px 5px;
 }
+//read more btn
+.read-more-btn {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  min-width: fit-content;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid $white;
+  border-radius: 12px;
+  cursor: pointer;
+}
+@media only screen and (min-width: 600px) {
+  .read-more-btn-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .read-more-btn {
+    width: fit-content;
+  }
+}
+.read-more-btn:hover {
+  border: 1px solid $orange;
+  transition: all 0.3s ease-in;
+}
+
 .bands-list {
   h2 {
     padding-bottom: 0.4rem;

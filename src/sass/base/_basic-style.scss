@@ -69,6 +69,7 @@ button {
   overflow: hidden;
   width: fit-content;
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 .log-out-btn:hover {
   border-color: $orange;
@@ -80,4 +81,13 @@ button {
     height: 2.8rem;
     font-size: 1.3rem;
   }
+}
+
+//orange arrow
+.bi-arrow-right {
+  filter: invert(63%) sepia(45%) saturate(3893%) hue-rotate(340deg) brightness(104%) contrast(101%);
+}
+//heart icon
+.empty-heart-icon:hover {
+  filter: invert(63%) sepia(45%) saturate(3993%) hue-rotate(330deg) brightness(90%) contrast(85%);
 }

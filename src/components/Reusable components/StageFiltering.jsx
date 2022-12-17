@@ -2,7 +2,7 @@ import React from "react";
 
 function StageFiltering(props) {
   return (
-    <select onChange={props.stageChanged} name="stages" id="stages">
+    <select onChange={props.stageChanged} name="stages" id="stages" className="stages">
       <option value="all" defaultValue>
         All stages
       </option>

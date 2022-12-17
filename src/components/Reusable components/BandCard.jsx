@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import emptyHeart from "../../media/favourites-empty.svg";
+import orangeArrow from "../../media/right-orange-arrow.svg";
 function BandCard(props) {
   //navigate allows us to pass a path and a state (data) through the link to a different route
   const navigate = useNavigate();
@@ -25,12 +26,18 @@ function BandCard(props) {
           <p>
             {props.start} - {props.end}
           </p>
-          {props.page === "bandPage" ? null : <p>Read more &#10132;</p>}
         </div>
         <div className="band-card-side-content">
-          <img src={emptyHeart} alt="empty heart icon" />
+          <img className="empty-heart-icon" src={emptyHeart} alt="empty heart icon" />
         </div>
       </div>
+      {props.page === "bandPage" ? null : (
+        <div className="read-more-btn-container">
+          <p className="read-more-btn">
+            Read more <img className="bi-arrow-right" src={orangeArrow} alt="orange arrow icon" />
+          </p>
+        </div>
+      )}
     </a>
   );
 }
