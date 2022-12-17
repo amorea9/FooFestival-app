@@ -16,3 +16,7 @@
     font-weight: 400;
   }
 }
+.playing-now-band:not(:last-child) {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $orange;
+}
