@@ -1,4 +1,3 @@
-/* ****BOTTOM NAV STYLING STARTS***** */
 .bottom-nav {
   display: flex;
   align-items: center;
@@ -12,7 +11,6 @@
   left: 50%;
   transform: translateX(-50%);
 
-  /*   box-shadow: -2px 2px 4px #3d3d3e, 10px -4px 10px #101014; */
   ul {
     display: flex;
     gap: 1rem;
@@ -44,5 +42,11 @@
     }
   }
 }
-
-/* ****BOTTOM NAV STYLING ENDS***** */
+@media only screen and (max-width: 333px) {
+  .bottom-nav > ul > li > a > p {
+    font-size: 15px;
+  }
+  .bottom-nav ul {
+    gap: 0.9rem;
+  }
+}
