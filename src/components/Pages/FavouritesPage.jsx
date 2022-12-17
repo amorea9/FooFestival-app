@@ -1,21 +1,25 @@
 import React from "react";
 import BandsList from "../Reusable components/BandsList";
 import searchIcon from "../../media/search-icon.svg";
-import { useOutletContext } from "react-router-dom";
+//import { useOutletContext } from "react-router-dom";
 
 function Favourites(props) {
-  const [scheduledBands, setScheduledBands] = useOutletContext();
+  //const [scheduledBands, setScheduledBands] = useOutletContext();
   //remember to add "if no favourite" option to display a message
   return (
     <section className="favourite-page">
       <h1>Your favourites</h1>
-      <div className="search-nav">
+      <div className="user-message">
+        <h3>Looks like you have no favourites yet!</h3>
+        <p>Add your favourites to your favourites list by clicking the heart when browsing the schedule.</p>
+      </div>
+      {/* <div className="search-nav">
         <input id="searchField" type="text" />
         <img className="search-icon" src={searchIcon} alt="search icon" />
-      </div>
-      <div className="bands-list-wrapper">
+      </div> */}
+      {/* <div className="bands-list-wrapper">
         <BandsList scheduledBands={scheduledBands} />
-      </div>
+      </div> */}
     </section>
   );
 }
