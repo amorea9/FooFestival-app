@@ -69,6 +69,7 @@ button {
   overflow: hidden;
   width: fit-content;
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 .log-out-btn:hover {
   border-color: $orange;

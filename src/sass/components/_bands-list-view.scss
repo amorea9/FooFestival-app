@@ -69,7 +69,6 @@
   align-items: center;
   width: 100%;
   min-width: fit-content;
-  transition: all 0.3s ease-in;
   padding: 0.8rem 1.6rem;
   border: 1px solid $white;
   border-radius: 12px;
@@ -86,6 +85,7 @@
 }
 .read-more-btn:hover {
   border: 1px solid $orange;
+  transition: all 0.3s ease-in;
 }
 
 .bands-list {
