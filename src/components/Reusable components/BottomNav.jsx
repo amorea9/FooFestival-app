@@ -28,7 +28,7 @@ function BottomNav(props) {
           </Link>
         </li>
         <li>
-          <Link smooth to={"/landing-page#top"}>
+          <Link smooth to={"/landing-page#playingNow"}>
             <img src={liveNow} alt="live now icon" />
             <p> Live</p>
           </Link>
