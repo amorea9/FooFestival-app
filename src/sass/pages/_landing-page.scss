@@ -1,4 +1,4 @@
-.SplashContainer {
+/* .SplashContainer {
   height: 90vh;
   max-width: fit-content;
   display: grid;
@@ -40,24 +40,28 @@
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 /// static version **not complete
-/* .SplashContainer {
+.SplashContainer {
   height: 90vh;
-  max-width: fit-content;
+  width: 100vw;
   display: grid;
+  grid-template-columns: 1fr;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
+  background-image: url(../media/landing-static.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
   h1 {
     display: block;
     text-align: center;
     mix-blend-mode: exclusion;
   }
 }
-.SplashContainer::before {
+/* .SplashContainer::before {
   //    ALT
   //   background-image: url("../public/assets/Bases-Purple.png");
   //   background-position: -100% 55%;

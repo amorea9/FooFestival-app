@@ -19,7 +19,7 @@
     padding: 1.8rem 1rem;
   }
   li {
-    width: 100%;
+    width: fit-content;
     a {
       display: flex;
       flex-direction: column;
@@ -48,5 +48,11 @@
   }
   .bottom-nav ul {
     gap: 0.9rem;
+  }
+}
+
+@media only screen and (min-width: 899px) {
+  .bottom-nav {
+    max-width: 850px;
   }
 }
