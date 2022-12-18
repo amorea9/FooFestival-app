@@ -31,7 +31,7 @@ function App() {
 
   useEffect(() => {
     async function getSchedule() {
-      const res = await fetch("http://localhost:8080/schedule");
+      const res = await fetch("https://morning-mountain-4570.fly.dev/schedule");
       const schedule = await res.json();
       setScheduledBands(schedule);
       console.log(schedule);

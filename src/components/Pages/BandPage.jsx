@@ -22,7 +22,7 @@ function BandPage(props) {
   //fetching detailed bands data
   useEffect(() => {
     async function getBands() {
-      const res = await fetch("http://localhost:8080/bands");
+      const res = await fetch("https://morning-mountain-4570.fly.dev/bands");
       const bands = await res.json();
       // setScheduledBands(schedule);
       console.log(bands);
@@ -54,7 +54,11 @@ function BandPage(props) {
       <h1>{bandDisplayed.name}</h1>
       <div className="single-band-content">
         <div className="band-info-wrapper">
-          {bandDisplayed.logo.includes("https") ? <img src={bandDisplayed.logo} alt={bandDisplayed.logoCredits} /> : <img src={logoPath} alt={bandDisplayed.logoCredits} />}
+          {bandDisplayed.logo.includes("https") ? (
+            <img src={bandDisplayed.logo} alt={bandDisplayed.logoCredits} />
+          ) : (
+            <img src={logoPath} alt={bandDisplayed.logoCredits} />
+          )}
 
           <h3>{bandDisplayed.name}</h3>
           <p>{bandDisplayed.bio}</p>
