@@ -68,7 +68,7 @@ button {
   color: $white;
   overflow: hidden;
   width: fit-content;
-  font-size: 1rem;
+  font-size: 1.3rem;
   transition: all 0.3s ease;
 }
 .log-out-btn:hover {
@@ -76,10 +76,16 @@ button {
   transition: all 0.3s ease-in;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
   .log-out-btn {
-    height: 2.8rem;
-    font-size: 1.3rem;
+    height: 2.6rem;
+    font-size: 1.15rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .log-out-btn {
+    height: 2.4rem;
+    font-size: 1rem;
   }
 }
 
