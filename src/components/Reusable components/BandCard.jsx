@@ -10,13 +10,6 @@ function BandCard(props) {
   };
 
   return (
-    // <Link
-    //   className="band-card"
-    //   to={{
-    //     pathname: `/band-page/${props.bandName}`,
-    //     state: props.bandName,
-    //   }}
-    // >
     <a className="band-card" onClick={() => toBandPage()}>
       <h3>{props.bandName}</h3>
       <div className="band-card-content">
