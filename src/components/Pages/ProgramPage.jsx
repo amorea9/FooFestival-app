@@ -58,14 +58,7 @@ function Program(props) {
   let allStagesSunday = jotunheimSunday.concat(midgardSunday, vanaheimSunday);
 
   //full schedule all days all stages
-  const fullSchedule = allStagesMonday.concat(
-    allStagesTuesday,
-    allStagesWednesday,
-    allStagesThursday,
-    allStagesFriday,
-    allStagesSaturday,
-    allStagesSunday
-  );
+  const fullSchedule = allStagesMonday.concat(allStagesTuesday, allStagesWednesday, allStagesThursday, allStagesFriday, allStagesSaturday, allStagesSunday);
 
   // const fullSchedule = {
   //   monday: allStagesMonday,
@@ -86,32 +79,32 @@ function Program(props) {
   function addDay() {
     //for each show if the index is <=36 then assign monday as a day
     scheduleWithDays = fullSchedule.map((item) => {
-      if (fullSchedule.indexOf(item) <= 36) {
+      if (fullSchedule.indexOf(item) < 36) {
         return {
           ...item,
           day: "Monday",
         };
-      } else if (fullSchedule.indexOf(item) <= 36 * 2) {
+      } else if (fullSchedule.indexOf(item) < 36 * 2) {
         return {
           ...item,
           day: "Tuesday",
         };
-      } else if (fullSchedule.indexOf(item) <= 36 * 3) {
+      } else if (fullSchedule.indexOf(item) < 36 * 3) {
         return {
           ...item,
           day: "Wednesday",
         };
-      } else if (fullSchedule.indexOf(item) <= 36 * 4) {
+      } else if (fullSchedule.indexOf(item) < 36 * 4) {
         return {
           ...item,
           day: "Thursday",
         };
-      } else if (fullSchedule.indexOf(item) <= 36 * 5) {
+      } else if (fullSchedule.indexOf(item) < 36 * 5) {
         return {
           ...item,
           day: "Friday",
         };
-      } else if (fullSchedule.indexOf(item) <= 36 * 6) {
+      } else if (fullSchedule.indexOf(item) < 36 * 6) {
         return {
           ...item,
           day: "Saturday",
