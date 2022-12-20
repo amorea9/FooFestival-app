@@ -1,11 +1,6 @@
 import React from "react";
-import BandsList from "../Reusable components/BandsList";
-import searchIcon from "../../media/search-icon.svg";
-//import { useOutletContext } from "react-router-dom";
 
 function Favourites(props) {
-  //const [scheduledBands, setScheduledBands] = useOutletContext();
-  //remember to add "if no favourite" option to display a message
   return (
     <section className="favourite-page">
       <h1>Your favourites</h1>

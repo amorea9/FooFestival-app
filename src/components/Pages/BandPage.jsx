@@ -24,8 +24,6 @@ function BandPage(props) {
     async function getBands() {
       const res = await fetch("https://morning-mountain-4570.fly.dev/bands");
       const bands = await res.json();
-      // setScheduledBands(schedule);
-      console.log(bands);
       //define the corresponding band that has to be displayed
       defineBand(bands);
     }

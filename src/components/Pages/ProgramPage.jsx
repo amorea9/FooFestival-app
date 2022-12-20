@@ -16,9 +16,6 @@ function Program(props) {
     stage: "all",
     search: "",
   });
-  // const [filteredList, setFilteredList] = useState([scheduledBands]);
-
-  // const [scheduleByDays, setScheduleByDays] = useState([{}]);
   //bands playing by days at each stage
   //monday
   let jotunheimMonday = Object.values(scheduledBands.Jotunheim.mon);
@@ -58,20 +55,14 @@ function Program(props) {
   let allStagesSunday = jotunheimSunday.concat(midgardSunday, vanaheimSunday);
 
   //full schedule all days all stages
-  const fullSchedule = allStagesMonday.concat(allStagesTuesday, allStagesWednesday, allStagesThursday, allStagesFriday, allStagesSaturday, allStagesSunday);
-
-  // const fullSchedule = {
-  //   monday: allStagesMonday,
-  //   tuesday: allStagesTuesday,
-  //   wednesday: allStagesWednesday,
-  //   thursday: allStagesThursday,
-  // };
-
-  //console.log("allStagesMonday", allStagesMonday);
-
-  // useEffect(() => {
-  //   setScheduleByDays([allStagesMonday, allStagesTuesday, allStagesWednesday, allStagesThursday, allStagesFriday, allStagesSaturday, allStagesSunday]);
-  // }, []);
+  const fullSchedule = allStagesMonday.concat(
+    allStagesTuesday,
+    allStagesWednesday,
+    allStagesThursday,
+    allStagesFriday,
+    allStagesSaturday,
+    allStagesSunday
+  );
 
   //trying to add property for each day
   let scheduleWithDays;
@@ -161,16 +152,13 @@ function Program(props) {
 
   const filterChanged = (e) => {
     setFilter({ ...filter, day: e.target.value });
-    // console.log(e.target.value);
   };
 
   const stageChanged = (e) => {
     setFilter({ ...filter, stage: e.target.value });
-    // console.log(e.target.value);
   };
   const searchBand = (e) => {
     setFilter({ ...filter, search: e.target.value.toLowerCase() });
-    // console.log(e.target.value);
   };
 
   let filteredList = scheduleWithStageAndDays;
@@ -181,7 +169,6 @@ function Program(props) {
   if (filter.stage != "all") {
     //if filtered by stage
     filteredList = scheduleWithStageAndDays.filter((show) => show.stage === filter.stage);
-    // console.log("stage array", filteredList);
   }
   if (filter.day != "all" && filter.stage != "all") {
     //if filtered by both

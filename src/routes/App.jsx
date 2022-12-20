@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 import TopNav from "../components/Reusable components/TopNav";
 
 function App() {
-  //state used to determine if the user is logged in or not. it's faked
+  //state used to determine if the user is logged in or not
   const [login, setLogin] = useState(false);
   //state for scheduled bands. app knows so that all the routes may know
   const [scheduledBands, setScheduledBands] = useState([]);
@@ -27,8 +27,8 @@ function App() {
   const [dateNow, setdateNow] = useState({
     today: 0,
   });
-  //fetching data
 
+  //fetching data
   useEffect(() => {
     async function getSchedule() {
       const res = await fetch("https://morning-mountain-4570.fly.dev/schedule");
@@ -54,15 +54,14 @@ function App() {
 
     //find current time in hours and minutes
     const currentTime = now.getHours() + ":" + now.getMinutes();
-
     //set live state of festival
     let isFoofestLive = false;
 
     //find bands playing at Jotunheim
     const playingAtJotunheim = schedule.Jotunheim;
-
     const playingAtMidgard = schedule.Midgard;
     const playingAtVanaheim = schedule.Vanaheim;
+
     //outputs an array where each day is presented as an index
     let jotunheimByDays = Object.values(playingAtJotunheim);
     let midgardByDays = Object.values(playingAtMidgard);
@@ -110,7 +109,6 @@ function App() {
       if (jotunheimToday != "break" && currentTime > jotunheimStart && currentTime < jotunheimEnd) {
         //get index of event object
         liveIndex = todayAtJotunheim.indexOf(show);
-        //console.log("jotunheimliveIndex:", jotunheimliveIndex);
         liveAtJotunheim = show.act;
         isFoofestLive = true;
         // find next up
@@ -148,7 +146,6 @@ function App() {
         liveAtMidgard = show.act;
         isFoofestLive = true;
 
-        //find next up
         //get index of next event object
         nextUp = liveIndex + 1;
         //check if next event is "break"

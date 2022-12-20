@@ -30,7 +30,17 @@ function LoginPage(props) {
           <h3>Log in</h3>
           <div className="email-input">
             <label htmlFor="email"> Email</label>
-            <input required pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}" title="Must be a valid email address" aria-required="true" autoFocus id="email" type="email" name="email" placeholder="JohnDoe@gmail.com" />
+            <input
+              required
+              pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
+              title="Must be a valid email address"
+              aria-required="true"
+              autoFocus
+              id="email"
+              type="email"
+              name="email"
+              placeholder="JohnDoe@gmail.com"
+            />
           </div>
           <div className="ticket-number-input">
             <label htmlFor="ticketNumber">Ticket number </label>
@@ -56,9 +66,6 @@ function LoginPage(props) {
             name="log-in-button"
             type="submit"
             value="Log in &#10132;"
-            // onClick={() => {
-            //   submit();
-            // }}
           />
         </form>
       </div>
