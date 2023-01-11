@@ -29,7 +29,7 @@ function LoginPage(props) {
         <form onSubmit={submit} className="log-in-form">
           <h3>Log in</h3>
           <div className="email-input">
-            <label htmlFor="email"> Email</label>
+            <label htmlFor="email"> Email*</label>
             <input
               required
               pattern="[A-Za-z0-9._+-]+@[A-Za-z0-9 -]+\.[a-z]{2,}"
@@ -43,12 +43,13 @@ function LoginPage(props) {
             />
           </div>
           <div className="ticket-number-input">
-            <label htmlFor="ticketNumber">Ticket number </label>
+            <label htmlFor="ticketNumber">Ticket number* </label>
             <input
               title="Must be a valid Ticket Number"
               required
               pattern="[A-Za-z0-9]{9,9}"
               aria-required="true"
+              aria-invalid="false"
               id="ticketNumber"
               type="text"
               name="ticketNumber"
@@ -59,7 +60,6 @@ function LoginPage(props) {
               placeholder="AID74RBSM"
             />
           </div>
-
           <input
             className="log-in-button"
             id="log-in-button"
