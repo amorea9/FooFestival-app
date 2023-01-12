@@ -20,24 +20,16 @@
   display: flex;
   flex-direction: column;
   width: 66%;
-  .check {
-    visibility: hidden;
-    visibility: visible;
-  }
-  &:valid {
-    .check {
-      visibility: visible;
-    }
-  }
 }
 
 .log-in-button {
   padding: 0.8rem 4.2rem;
   border-radius: 12px;
-  border: 1px solid $white;
-  background-color: $grey;
+  border: 2px solid $grey;
+  background-color: transparent;
   cursor: pointer;
   font-size: 1.1rem;
+  color: $grey;
 }
 #email,
 #ticketNumber {
@@ -61,5 +53,11 @@
 }
 form:valid .log-in-button {
   background-color: $white;
+  border: 2px solid $white;
+  transition: all 0.3s ease-in;
   color: #010101;
+}
+form:valid .log-in-button:hover {
+  color: #010101;
+  border-color: $orange;
 }
